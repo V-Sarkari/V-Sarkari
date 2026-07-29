@@ -2,17 +2,12 @@
 
 console.log("Welcome to V-Sarkari");
 
-// Welcome Message
 // Dark Mode
 
 const darkBtn = document.getElementById("darkModeBtn");
 
-if(darkBtn){
-
-darkBtn.addEventListener("click",()=>{
-
-document.body.classList.toggle("dark-mode");
-
-});
-
+if (darkBtn) {
+    darkBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
 }
