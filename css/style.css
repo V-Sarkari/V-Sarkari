@@ -371,3 +371,46 @@ border-radius:8px;
 .dark-mode footer{
     background:#000;
 }
+/* Notification Panel */
+
+.notification-panel{
+
+position:fixed;
+
+top:75px;
+
+right:15px;
+
+width:320px;
+
+background:white;
+
+padding:15px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+display:none;
+
+z-index:9999;
+
+}
+
+.notification-panel h2{
+
+color:#1565c0;
+
+margin-bottom:15px;
+
+}
+
+.notification-item{
+
+padding:10px;
+
+border-bottom:1px solid #eee;
+
+font-size:14px;
+
+}
