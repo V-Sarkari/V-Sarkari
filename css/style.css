@@ -174,3 +174,44 @@ footer{
 .job-card button:hover{
     background:#0d47a1;
 }
+.job-detail{
+
+margin:20px;
+
+}
+
+.info-box{
+
+background:white;
+
+padding:20px;
+
+margin-bottom:20px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.10);
+
+border-left:6px solid #1565c0;
+
+}
+
+.info-box h2{
+
+color:#1565c0;
+
+margin-bottom:10px;
+
+}
+
+.info-box ul{
+
+padding-left:20px;
+
+}
+
+.info-box li{
+
+margin:10px 0;
+
+        }
