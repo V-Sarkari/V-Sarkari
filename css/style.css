@@ -307,3 +307,44 @@ margin-top:5px;
 font-size:12px;
 
 }
+/* Login Page */
+
+.login-box{
+
+max-width:420px;
+
+margin:80px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:18px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+text-align:center;
+
+}
+
+.login-box h1{
+
+color:#1565c0;
+
+margin-bottom:10px;
+
+}
+
+.login-box input{
+
+width:100%;
+
+padding:12px;
+
+margin:12px 0;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+}
