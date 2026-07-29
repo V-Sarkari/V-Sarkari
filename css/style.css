@@ -119,3 +119,58 @@ footer{
     font-size:18px;
     cursor:pointer;
 }
+/* Latest Jobs Section */
+
+.latest-jobs{
+    margin:20px;
+}
+
+.latest-jobs h2{
+    font-size:28px;
+    margin-bottom:20px;
+    color:#0d47a1;
+}
+
+.job-card{
+    background:#ffffff;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+    border-left:6px solid #1565c0;
+    transition:.3s;
+}
+
+.job-card:hover{
+    transform:translateY(-5px);
+}
+
+.job-card h3{
+    color:#1565c0;
+    margin-bottom:10px;
+}
+
+.job-card p{
+    color:#555;
+    margin-bottom:10px;
+}
+
+.job-card span{
+    color:red;
+    font-weight:bold;
+}
+
+.job-card button{
+    margin-top:15px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.job-card button:hover{
+    background:#0d47a1;
+}
