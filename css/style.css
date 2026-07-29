@@ -414,3 +414,43 @@ border-bottom:1px solid #eee;
 font-size:14px;
 
 }
+/* Admin Panel */
+
+.admin-panel{
+
+max-width:700px;
+
+margin:30px auto;
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+}
+
+.admin-panel input,
+.admin-panel textarea{
+
+width:100%;
+
+padding:12px;
+
+margin:12px 0;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+}
+
+.admin-panel textarea{
+
+height:150px;
+
+resize:vertical;
+
+}
