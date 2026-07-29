@@ -79,3 +79,26 @@ card.style.display = "none";
 });
 
 }
+// Notification Panel
+
+const bell = document.getElementById("notificationBtn");
+
+const panel = document.getElementById("notificationPanel");
+
+if(bell && panel){
+
+bell.addEventListener("click",()=>{
+
+if(panel.style.display==="block"){
+
+panel.style.display="none";
+
+}else{
+
+panel.style.display="block";
+
+}
+
+});
+
+}
