@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "SSC CGL 2026",
+    "department": "Staff Selection Commission",
+    "qualification": "Graduate",
+    "lastDate": "15 Aug 2026",
+    "status": "Apply Online",
+    "vacancy": "To Be Announced",
+    "category": "Latest Job"
+  },
+  {
+    "id": 2,
+    "title": "UP Police Constable",
+    "department": "Uttar Pradesh Police",
+    "qualification": "12th Pass",
+    "lastDate": "Coming Soon",
+    "status": "Notification Soon",
+    "vacancy": "To Be Announced",
+    "category": "Latest Job"
+  },
+  {
+    "id": 3,
+    "title": "Railway ALP",
+    "department": "Railway Recruitment Board",
+    "qualification": "ITI / Diploma",
+    "lastDate": "Coming Soon",
+    "status": "Notification Soon",
+    "vacancy": "To Be Announced",
+    "category": "Latest Job"
+  }
+]
