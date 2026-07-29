@@ -348,3 +348,26 @@ border:1px solid #ccc;
 border-radius:8px;
 
 }
+/* Dark Mode */
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode section{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark-mode .job-card{
+    background:#1e1e1e;
+}
+
+.dark-mode .dash-card{
+    background:#1e1e1e;
+}
+
+.dark-mode footer{
+    background:#000;
+}
