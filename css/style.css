@@ -198,7 +198,7 @@ border-left:6px solid #e53935;
 
 .info-box h2{
 
-color:#1565c0;
+color:#e53935;
 
 margin-bottom:10px;
 
@@ -238,7 +238,7 @@ margin:10px 0;
     border-radius:15px;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.10);
-    border-top:5px solid #1565c0;
+    border-top:5px solid #e53935;
 }
 
 .dash-card h3{
@@ -247,7 +247,7 @@ margin:10px 0;
 }
 
 .dash-card h1{
-    color:#1565c0;
+    color:#e53935;
     font-size:34px;
 }
 /* Bottom Navigation */
@@ -280,7 +280,7 @@ z-index:999;
 
 text-decoration:none;
 
-color:#1565c0;
+color:#e53935;
 
 display:flex;
 
@@ -329,7 +329,7 @@ text-align:center;
 
 .login-box h1{
 
-color:#1565c0;
+color:#e53935;
 
 margin-bottom:10px;
 
@@ -399,7 +399,7 @@ z-index:9999;
 
 .notification-panel h2{
 
-color:#1565c0;
+color:#e53935;
 
 margin-bottom:15px;
 
