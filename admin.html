@@ -1,32 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel | V-Sarkari</title>
+<title>V-Sarkari Admin Panel</title>
 
 <link rel="stylesheet" href="css/style.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
 <body>
 
+<header class="navbar">
+<h2>⚙️ V-Sarkari Admin Panel</h2>
+</header>
+
+<div class="login-box">
 <button id="googleLogin">🔐 Login with Google</button>
 
 <button id="googleLogout" style="display:none;">
 🚪 Logout
 </button>
+</div>
 
-<header class="navbar">
-<h2>⚙️ V-Sarkari Admin Panel</h2>
-</header>
-<header class="navbar">
-<h2>⚙️ V-Sarkari Admin Panel</h2>
-</header>
+<section class="admin-panel">
 
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<h2>📢 Add New Government Job</h2>
+
+<input type="text" id="jobTitle" placeholder="Job Title">
+
+<input type="text" id="department" placeholder="Department">
+
+<input type="text" id="qualification" placeholder="Qualification">
+
+<input type="text" id="lastDate" placeholder="Last Date">
+
+<input type="text" id="vacancy" placeholder="Vacancy">
+
+<input type="url" id="applyLink" placeholder="Apply Link">
+
+<textarea id="description" placeholder="Job Description"></textarea>
+
+<button id="publishBtn">
+🚀 Publish Job
+</button>
+
+<p id="successMsg"></p>
+
+  </section>
 
 <script src="js/firebase.js"></script>
 <script src="js/admin.js"></script>
