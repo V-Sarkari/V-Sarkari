@@ -1,143 +1,199 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V-Sarkari | Sarkari Result, Latest Jobs, Admit Card</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background-color: #f8fafc; color: #111; }
-
-        /* Top Header & Branding */
-        header { background: #ab1100; color: white; text-align: center; padding: 15px; border-bottom: 4px solid #700b00; }
-        header h1 { font-size: 28px; font-weight: bold; letter-spacing: 1px; }
-        header p { font-size: 14px; margin-top: 5px; color: #ffdede; }
-
-        /* Top Color Grid Boxes */
-        .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; max-width: 1100px; margin: 15px auto; padding: 0 10px; }
-        .grid-box { color: white; padding: 12px 8px; text-align: center; font-weight: bold; font-size: 14px; border-radius: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center; height: 50px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
-        .bg-red { background-color: #b91c1c; }
-        .bg-blue { background-color: #1d4ed8; }
-        .bg-green { background-color: #15803d; }
-        .bg-maroon { background-color: #831843; }
-        .bg-purple { background-color: #6b21a8; }
-        .bg-orange { background-color: #c2410c; }
-
-        /* Main Content Container (3 Columns) */
-        .main-container { max-width: 1100px; margin: 20px auto; padding: 0 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-
-        /* Table Section Column */
-        .section-box { border: 2px solid #ab1100; background: white; border-radius: 4px; overflow: hidden; }
-        .section-header { background: #ab1100; color: white; padding: 10px; text-align: center; font-size: 18px; font-weight: bold; }
-        .section-list { list-style: none; padding: 0; }
-        .section-list li { border-bottom: 1px solid #e2e8f0; }
-        .section-list a { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; color: #1e3a8a; text-decoration: none; font-size: 13px; font-weight: 600; }
-        .section-list a:hover { background: #f1f5f9; color: #b91c1c; }
-
-        /* Action Buttons */
-        .btn-track { background: #f59e0b; color: #000; border: none; padding: 3px 6px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer; margin-left: 5px; }
-        .btn-track.added { background: #22c55e; color: white; }
-
-        /* Footer */
-        footer { background: #ab1100; color: white; text-align: center; padding: 15px; margin-top: 30px; font-size: 13px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V-Sarkari | Government Job Portal</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
+<!-- Header -->
+<header class="header">
+<div class="logo-area">
+<img src="images/logo.png" alt="V-Sarkari Logo">
+<div>
+<h2>V-Sarkari</h2>
+<p>Your Personal Government Job Assistant</p>
+</div>
+</div>
+<div class="header-icons">
+<i class="fas fa-search"></i>
+<i class="fas fa-bell"></i>
+<i class="fas fa-user-circle"></i>
+</div>
+</header>
+<!-- Search -->
+<section class="search-area">
+<input type="text" placeholder="Search Jobs, Results, Admit Card...">
+<button>
+<i class="fas fa-search"></i>
+</button>
+</section>
+<!-- Hero Banner -->
+<section class="hero">
+<div class="hero-text">
+<h1>India's Smart Government Job Portal</h1>
+<p>
+Latest Jobs • Results • Admit Cards • Answer Keys
+</p>
+<div class="hero-buttons">
+<a href="https://t.me/V_Sarkari" target="_blank" class="telegram">
+<i class="fab fa-telegram"></i>
+Join Telegram
+</a>
+<a href="https://whatsapp.com/channel/0029VaoBMlY6xCSGcukCNM3I"
+target="_blank"
+class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+Join WhatsApp
+</a>
+</div>
+</div>
+<div class="hero-image">
+<img src="images/banner.png" alt="Banner">
+</div>
+</section>
+<!-- Quick Categories -->
+<section class="quick-menu">
+<h2>Quick Access</h2>
+<div class="grid">
+<a href="#">Latest Jobs</a>
+<a href="#">Results</a>
+<a href="#">Admit Card</a>
+<a href="#">Answer Key</a>
+<a href="#">Syllabus</a>
+<a href="#">Admissions</a>
+<a href="#">Scholarship</a>
+<a href="#">Important Forms</a>
+</div>
+</section>
 
-    <header>
-        <h1>V-SARKARI.COM</h1>
-        <p>WWW.V-SARKARI.COM - Sarkari Result, Latest Jobs & Admit Card</p>
-    </header>
+<!-- Breaking News -->
+<section class="breaking-news">
+<div class="breaking-title">
+🔥 Breaking Updates
+</div>
+<div class="breaking-text">
+<marquee>
+SSC CGL 2026 • Railway ALP • UP Police • Home Guard • India Post GDS • Bank Jobs • UPSC • State Government Jobs
+</marquee>
+</div>
+</section>
+<!-- Latest Jobs -->
+<section class="latest-section">
+<h2>🔥 Latest Government Jobs</h2>
+<div class="job-container">
+<div class="job-card">
+<span class="new-tag">NEW</span>
+<h3>SSC CGL 2026 Recruitment</h3>
+<p>Combined Graduate Level Examination</p>
+<p><b>Last Date:</b> 15 Aug 2026</p>
+<a href="#">View Details</a>
+</div>
+<div class="job-card">
+<span class="new-tag">NEW</span>
+<h3>Railway ALP Recruitment</h3>
+<p>Assistant Loco Pilot</p>
+<p><b>Last Date:</b> 25 Aug 2026</p>
+<a href="#">View Details</a>
+</div>
+<div class="job-card">
+<span class="new-tag">NEW</span>
+<h3>UP Police Constable</h3>
+<p>Uttar Pradesh Police Recruitment</p>
+<p><b>Last Date:</b> Coming Soon</p>
+<a href="#">View Details</a>
+</div>
+</div>
+</section>
+<!-- Results -->
+<section class="result-section">
+<h2>📄 Latest Results</h2>
+<div class="result-list">
+<a href="#">SSC GD Result 2026</a>
+<a href="#">UP Board Result 2026</a>
+<a href="#">Railway NTPC Result</a>
+<a href="#">UPSC Final Result</a>
+</div>
+</section>
+<!-- Admit Card -->
+<section class="admit-section">
+<h2>🎫 Admit Cards</h2>
+<div class="result-list">
+<a href="#">SSC CGL Admit Card</a>
+<a href="#">Railway Group D Admit Card</a>
+<a href="#">UP Police Admit Card</a>
+<a href="#">CTET Admit Card</a>
+</div>
+</section>
 
-    <div class="highlight-grid">
-        <a href="#" class="grid-box bg-red">SSC CGL 2026</a>
-        <a href="#" class="grid-box bg-blue">UP Police Admit Card</a>
-        <a href="#" class="grid-box bg-green">RRB NTPC Result</a>
-        <a href="#" class="grid-box bg-maroon">RPSC Teacher Form</a>
-        <a href="#" class="grid-box bg-purple">Bihar Police SI</a>
-        <a href="#" class="grid-box bg-orange">CRPF Constable</a>
-    </div>
-
-    <div class="main-container">
-        
-        <div class="section-box">
-            <div class="section-header">Result</div>
-            <ul id="result-list" class="section-list">
-                <li><a href="#">Loading Results...</a></li>
-            </ul>
-        </div>
-
-        <div class="section-box">
-            <div class="section-header">Admit Card</div>
-            <ul id="admit-list" class="section-list">
-                <li><a href="#">Loading Admit Cards...</a></li>
-            </ul>
-        </div>
-
-        <div class="section-box">
-            <div class="section-header">Latest Jobs</div>
-            <ul id="jobs-list" class="section-list">
-                <li><a href="#">Loading Latest Jobs...</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>© 2026 V-Sarkari.com | All Rights Reserved</p>
-    </footer>
-
-    <script>
-        let savedForms = JSON.parse(localStorage.getItem('vSarkari_Forms')) || [];
-
-        function toggleTrack(event, id, title) {
-            event.preventDefault();
-            if (savedForms.includes(id)) {
-                savedForms = savedForms.filter(item => item !== id);
-            } else {
-                savedForms.push(id);
-                alert(`"${title}" को आपके डैशबोर्ड में जोड़ दिया गया है!`);
-            }
-            localStorage.setItem('vSarkari_Forms', JSON.stringify(savedForms));
-            loadData();
-        }
-
-        async function loadData() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-
-                const jobsList = document.getElementById('jobs-list');
-                const admitList = document.getElementById('admit-list');
-                const resultList = document.getElementById('result-list');
-
-                jobsList.innerHTML = '';
-                admitList.innerHTML = '';
-                resultList.innerHTML = '';
-
-                data.forEach(item => {
-                    const isTracked = savedForms.includes(item.id);
-                    const liHTML = `
-                        <li>
-                            <a href="${item.link}">
-                                <span>${item.title}</span>
-                                <button class="btn-track ${isTracked ? 'added' : ''}" onclick="toggleTrack(event, '${item.id}', '${item.title}')">
-                                    ${isTracked ? '✓ Tracking' : '+ Track'}
-                                </button>
-                            </a>
-                        </li>
-                    `;
-
-                    if (item.category === 'job') jobsList.innerHTML += liHTML;
-                    else if (item.category === 'admit') admitList.innerHTML += liHTML;
-                    else if (item.category === 'result') resultList.innerHTML += liHTML;
-                });
-            } catch (error) {
-                console.error('Error loading data:', error);
-            }
-        }
-
-        loadData();
-    </script>
+<!-- SOCIAL SECTION -->
+<section class="social-section">
+<h2>📢 Join Our Official Channels</h2>
+<div class="social-grid">
+<a href="https://t.me/V_Sarkari" target="_blank" class="telegram-card">
+<div class="icon">
+<i class="fab fa-telegram"></i>
+</div>
+<h3>Telegram Channel</h3>
+<p>Get Instant Government Job Updates</p>
+<span>Join Now →</span>
+</a>
+<a href="https://whatsapp.com/channel/0029VaoBMlY6xCSGcukCNM3I"
+target="_blank"
+class="whatsapp-card">
+<div class="icon">
+<i class="fab fa-whatsapp"></i>
+</div>
+<h3>WhatsApp Channel</h3>
+<p>Daily Job Alerts Directly on WhatsApp</p>
+<span>Join Now →</span>
+</a>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo">
+<img src="images/logo.png" alt="logo">
+<h2>V-Sarkari</h2>
+<p>Your Personal Government Job Assistant</p>
+</div>
+<div class="footer-links">
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Disclaimer</a>
+</div>
+<p class="copyright">
+© 2026 V-Sarkari. All Rights Reserved.
+</p>
+</footer>
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+<a href="index.html" class="active">
+<i class="fa-solid fa-house"></i>
+<span>Home</span>
+</a>
+<a href="jobs.html">
+<i class="fa-solid fa-briefcase"></i>
+<span>Jobs</span>
+</a>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+<span>Dashboard</span>
+</a>
+<a href="ai.html">
+<i class="fa-solid fa-robot"></i>
+<span>AI</span>
+</a>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i>
+<span>Profile</span>
+</a>
+</nav>
+<script src="js/app.js"></script>
 </body>
 </html>
