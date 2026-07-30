@@ -1,232 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V-Sarkari | Your Personal Government Job Assistant</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Sarkari | Sarkari Result, Latest Jobs, Admit Card</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f8fafc; color: #111; }
 
+        /* Top Header & Branding */
+        header { background: #ab1100; color: white; text-align: center; padding: 15px; border-bottom: 4px solid #700b00; }
+        header h1 { font-size: 28px; font-weight: bold; letter-spacing: 1px; }
+        header p { font-size: 14px; margin-top: 5px; color: #ffdede; }
+
+        /* Top Color Grid Boxes */
+        .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; max-width: 1100px; margin: 15px auto; padding: 0 10px; }
+        .grid-box { color: white; padding: 12px 8px; text-align: center; font-weight: bold; font-size: 14px; border-radius: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center; height: 50px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
+        .bg-red { background-color: #b91c1c; }
+        .bg-blue { background-color: #1d4ed8; }
+        .bg-green { background-color: #15803d; }
+        .bg-maroon { background-color: #831843; }
+        .bg-purple { background-color: #6b21a8; }
+        .bg-orange { background-color: #c2410c; }
+
+        /* Main Content Container (3 Columns) */
+        .main-container { max-width: 1100px; margin: 20px auto; padding: 0 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+
+        /* Table Section Column */
+        .section-box { border: 2px solid #ab1100; background: white; border-radius: 4px; overflow: hidden; }
+        .section-header { background: #ab1100; color: white; padding: 10px; text-align: center; font-size: 18px; font-weight: bold; }
+        .section-list { list-style: none; padding: 0; }
+        .section-list li { border-bottom: 1px solid #e2e8f0; }
+        .section-list a { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; color: #1e3a8a; text-decoration: none; font-size: 13px; font-weight: 600; }
+        .section-list a:hover { background: #f1f5f9; color: #b91c1c; }
+
+        /* Action Buttons */
+        .btn-track { background: #f59e0b; color: #000; border: none; padding: 3px 6px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer; margin-left: 5px; }
+        .btn-track.added { background: #22c55e; color: white; }
+
+        /* Footer */
+        footer { background: #ab1100; color: white; text-align: center; padding: 15px; margin-top: 30px; font-size: 13px; }
+    </style>
+</head>
 <body>
 
-  <header class="navbar">
+    <header>
+        <h1>V-SARKARI.COM</h1>
+        <p>WWW.V-SARKARI.COM - Sarkari Result, Latest Jobs & Admit Card</p>
+    </header>
 
-    <div class="logo">
-        <img src="assets/logo/logo.png" alt="V-Sarkari Logo">
-        <div>
-            <h2>V-Sarkari</h2>
-            <p>Your Personal Government Job Assistant</p>
+    <div class="highlight-grid">
+        <a href="#" class="grid-box bg-red">SSC CGL 2026</a>
+        <a href="#" class="grid-box bg-blue">UP Police Admit Card</a>
+        <a href="#" class="grid-box bg-green">RRB NTPC Result</a>
+        <a href="#" class="grid-box bg-maroon">RPSC Teacher Form</a>
+        <a href="#" class="grid-box bg-purple">Bihar Police SI</a>
+        <a href="#" class="grid-box bg-orange">CRPF Constable</a>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="section-box">
+            <div class="section-header">Result</div>
+            <ul id="result-list" class="section-list">
+                <li><a href="#">Loading Results...</a></li>
+            </ul>
         </div>
+
+        <div class="section-box">
+            <div class="section-header">Admit Card</div>
+            <ul id="admit-list" class="section-list">
+                <li><a href="#">Loading Admit Cards...</a></li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <div class="section-header">Latest Jobs</div>
+            <ul id="jobs-list" class="section-list">
+                <li><a href="#">Loading Latest Jobs...</a></li>
+            </ul>
+        </div>
+
     </div>
 
-    <div class="nav-icons">
-        <button id="notificationBtn" title="Notifications">🔔</button>
-        <button title="Language">🌐</button>
-        <button id="darkModeBtn" title="Dark Mode">🌙</button>
-        <button title="Profile">👤</button>
-    </div>
-    
-</header>
-
-<hr>
-
-<section>
-  <h2>🔍 Search Government Jobs</h2>
-  <input type="text" id="searchInput" placeholder="Search Jobs, Result, Admit Card...">
-  <button>Search</button>
-</section>
-
-<hr>
-
-<section>
-  <h2>📢 Breaking Updates</h2>
-  <p>No Updates Yet</p>
-</section>
-
-<hr>
-
-<section>
-  <h2>🚀 Quick Access</h2>
-  <section class="dashboard">
-
-<h2>📊 My Dashboard</h2>
-
-<div class="dashboard-grid">
-
-<div class="dash-card">
-<h3>📄 Forms Filled</h3>
-<h1>0</h1>
-</div>
-
-<div class="dash-card">
-<h3>🎫 Admit Cards</h3>
-<h1>0</h1>
-</div>
-
-<div class="dash-card">
-<h3>📝 Exams Given</h3>
-<h1>0</h1>
-</div>
-
-<div class="dash-card">
-<h3>🏆 Results</h3>
-<h1>0</h1>
-</div>
-
-<div class="dash-card">
-<h3>🔔 Notifications</h3>
-<h1>0</h1>
-</div>
-
-<div class="dash-card">
-<h3>⭐ Saved Jobs</h3>
-<h1>0</h1>
-</div>
-
-</div>
-
-  </section>
-  
-<section class="latest-jobs">
-
-<h2>🔥 Latest Government Jobs</h2>
-
-<div class="job-card">
-
-<h3>SSC CGL 2026</h3>
-
-<p>Combined Graduate Level Examination</p>
-
-<span>Last Date : 15 Aug 2026</span>
-
-<br><br>
-
-<a href="job-details.html">
-    <button>Apply Now</button>
-</a>
-
-</div>
-
-<div class="job-card">
-
-<h3>UP Police Constable</h3>
-
-<p>Uttar Pradesh Police Recruitment</p>
-
-<span>Coming Soon</span>
-
-<br><br>
-
-<a href="job-details.html">
-    <button>View Details</button>
-</a>
-
-</div>
-
-<div class="job-card">
-
-<h3>Railway ALP</h3>
-
-<p>Assistant Loco Pilot Recruitment</p>
-
-<span>Notification Soon</span>
-
-<br><br>
-
-<a href="job-details.html">
-    <button>Read More</button>
-</a>
-
-</div>
-
-</section>
-  <a href="latest-jobs.html"><button>Latest Jobs</button></a>
-
-<a href="admit-card.html"><button>Admit Card</button></a>
-
-<a href="results.html"><button>Results</button></a>
-
-<a href="answer-key.html"><button>Answer Key</button></a>
-
-<a href="syllabus.html"><button>Syllabus</button></a>
-
-<a href="exam-calendar.html"><button>Exam Calendar</button></a>
-
-<a href="notifications.html"><button>Notifications</button></a>
-
-<a href="ai.html"><button>AI Assistant</button></a>
-
-<a href="profile.html"><button>Profile</button></a>
-</section>
-
-<hr>
-
-<section>
-  <h2>🤖 AI Assistant</h2>
-  <p>Coming Soon...</p>
-</section>
-
-<hr>
-
-<footer>
-  <h3>V-Sarkari</h3>
-  <p>Your Personal Government Job Assistant</p>
-  <p>Powered by Vishal Shukla</p>
-</footer>
-  <nav class="bottom-nav">
-
-<a href="index.html">
-🏠
-<span>Home</span>
-</a>
-
-<a href="latest-jobs.html">
-💼
-<span>Jobs</span>
-</a>
-
-<a href="notifications.html">
-🔔
-<span>Alerts</span>
-</a>
-
-<a href="ai.html">
-🤖
-<span>AI</span>
-</a>
-
-<a href="profile.html">
-👤
-<span>Profile</span>
-</a>
-
-  </nav>
-<script src="js/app.js"></script>
-  <div id="notificationPanel" class="notification-panel">
-
-<h2>🔔 Notifications</h2>
-
-<div class="notification-item">
-📢 SSC CGL 2026 Application Started
-</div>
-
-<div class="notification-item">
-🎫 UP Police Admit Card Released
-</div>
-
-<div class="notification-item">
-🏆 Railway ALP Result Declared
-</div>
-
-<div class="notification-item">
-⏰ India Post GDS Last Date Tomorrow
-</div>
-
-</div>
-  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
-
-<script src="js/firebase.js"></script>
-<script src="js/app.js"></script>
+    <footer>
+        <p>© 2026 V-Sarkari.com | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        let savedForms = JSON.parse(localStorage.getItem('vSarkari_Forms')) || [];
+
+        function toggleTrack(event, id, title) {
+            event.preventDefault();
+            if (savedForms.includes(id)) {
+                savedForms = savedForms.filter(item => item !== id);
+            } else {
+                savedForms.push(id);
+                alert(`"${title}" को आपके डैशबोर्ड में जोड़ दिया गया है!`);
+            }
+            localStorage.setItem('vSarkari_Forms', JSON.stringify(savedForms));
+            loadData();
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+
+                const jobsList = document.getElementById('jobs-list');
+                const admitList = document.getElementById('admit-list');
+                const resultList = document.getElementById('result-list');
+
+                jobsList.innerHTML = '';
+                admitList.innerHTML = '';
+                resultList.innerHTML = '';
+
+                data.forEach(item => {
+                    const isTracked = savedForms.includes(item.id);
+                    const liHTML = `
+                        <li>
+                            <a href="${item.link}">
+                                <span>${item.title}</span>
+                                <button class="btn-track ${isTracked ? 'added' : ''}" onclick="toggleTrack(event, '${item.id}', '${item.title}')">
+                                    ${isTracked ? '✓ Tracking' : '+ Track'}
+                                </button>
+                            </a>
+                        </li>
+                    `;
+
+                    if (item.category === 'job') jobsList.innerHTML += liHTML;
+                    else if (item.category === 'admit') admitList.innerHTML += liHTML;
+                    else if (item.category === 'result') resultList.innerHTML += liHTML;
+                });
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        loadData();
+    </script>
 </body>
 </html>
