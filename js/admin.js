@@ -1,24 +1,39 @@
-
 const provider = new firebase.auth.GoogleAuthProvider();
 
 const loginBtn = document.getElementById("googleLogin");
 const logoutBtn = document.getElementById("googleLogout");
+const publishBtn = document.getElementById("publishBtn");
 
-loginBtn.onclick = () => {
-  firebase.auth().signInWithPopup(provider);
-};
+loginBtn.addEventListener("click", () => {
+    auth.signInWithPopup(provider)
+        .then(() => {
+            alert("Login Successful");
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+});
 
-logoutBtn.onclick = () => {
-  firebase.auth().signOut();
-};
+logoutBtn.addEventListener("click", () => {
+    auth.signOut();
+});
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    loginBtn.style.display = "none";
-    logoutBtn.style.display = "inline-block";
-    console.log("Logged in:", user.email);
-  } else {
-    loginBtn.style.display = "inline-block";
-    logoutBtn.style.display = "none";
-  }
+auth.onAuthStateChanged((user) => {
+
+    if (user) {
+
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "block";
+
+        publishBtn.disabled = false;
+
+    } else {
+
+        loginBtn.style.display = "block";
+        logoutBtn.style.display = "none";
+
+        publishBtn.disabled = true;
+
+    }
+
 });
