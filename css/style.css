@@ -13,7 +13,7 @@ body{
 }
 
 header{
-    background:#0d47a1;
+    background:#c62828;
     color:white;
     text-align:center;
     padding:20px;
@@ -45,7 +45,7 @@ input{
 }
 
 button{
-    background:#1565c0;
+    background:#e53935;
     color:white;
     border:none;
     padding:12px 18px;
@@ -56,11 +56,11 @@ button{
 }
 
 button:hover{
-    background:#0d47a1;
+    background:#c62828;
 }
 
 footer{
-    background:#0d47a1;
+    background:#c62828;
     color:white;
     text-align:center;
     padding:20px;
@@ -70,7 +70,7 @@ footer{
 /* Premium Header */
 
 .navbar{
-    background:#0d47a1;
+    background:#c62828;
     color:white;
     display:flex;
     justify-content:space-between;
@@ -128,7 +128,7 @@ footer{
 .latest-jobs h2{
     font-size:28px;
     margin-bottom:20px;
-    color:#0d47a1;
+    color:#c62828;
 }
 
 .job-card{
@@ -137,7 +137,7 @@ footer{
     padding:20px;
     margin-bottom:20px;
     box-shadow:0 5px 15px rgba(0,0,0,0.12);
-    border-left:6px solid #1565c0;
+    border-left:6px solid #e53935;
     transition:.3s;
 }
 
@@ -146,7 +146,7 @@ footer{
 }
 
 .job-card h3{
-    color:#1565c0;
+    color:#e53935;
     margin-bottom:10px;
 }
 
@@ -162,7 +162,7 @@ footer{
 
 .job-card button{
     margin-top:15px;
-    background:#1565c0;
+    background:#e53935;
     color:white;
     border:none;
     padding:12px 22px;
@@ -172,7 +172,7 @@ footer{
 }
 
 .job-card button:hover{
-    background:#0d47a1;
+    background:#c62828;
 }
 .job-detail{
 
@@ -192,7 +192,7 @@ border-radius:15px;
 
 box-shadow:0 5px 15px rgba(0,0,0,.10);
 
-border-left:6px solid #1565c0;
+border-left:6px solid #e53935;
 
 }
 
@@ -222,7 +222,7 @@ margin:10px 0;
 }
 
 .dashboard h2{
-    color:#0d47a1;
+    color:#c62828;
     margin-bottom:20px;
 }
 
@@ -296,7 +296,7 @@ font-weight:bold;
 
 .bottom-nav a:hover{
 
-color:#0d47a1;
+color:#c62828;
 
 }
 
