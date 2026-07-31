@@ -1,6 +1,5 @@
 /* ===========================
-   V-Sarkari 2.0
-   STYLE.CSS - PART 1
+   V-SARKARI STYLE PART-1
 =========================== */
 
 *{
@@ -10,31 +9,20 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
+body{
+background:#eef3fb;
+color:#222;
 }
 
-body{
-background:#eef4fb;
-color:#222;
-overflow-x:hidden;
+a{
+text-decoration:none;
 }
 
 /* HEADER */
 
-.header{
+.top-header{
 
-position:sticky;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-background:#0a4ea3;
-
-padding:12px 18px;
+background:#0b4ea2;
 
 display:flex;
 
@@ -42,13 +30,11 @@ justify-content:space-between;
 
 align-items:center;
 
-z-index:999;
-
-box-shadow:0 4px 12px rgba(0,0,0,.18);
+padding:14px 18px;
 
 }
 
-.logo-area{
+.logo-box{
 
 display:flex;
 
@@ -58,89 +44,77 @@ gap:12px;
 
 }
 
-.logo-area img{
+.logo-box img{
 
-width:52px;
+width:60px;
 
-height:52px;
+height:60px;
 
-border-radius:12px;
+border-radius:14px;
 
-background:white;
+background:#fff;
 
 padding:4px;
 
 }
 
-.logo-area h2{
+.logo-text h1{
+
+font-size:30px;
 
 color:#fff;
-
-font-size:24px;
 
 font-weight:700;
 
 }
 
-.logo-area p{
+.logo-text p{
 
-color:#dfefff;
+color:#dbe8ff;
 
-font-size:12px;
+font-size:14px;
+
+margin-top:2px;
 
 }
 
-.header-icons{
+.header-right{
 
 display:flex;
 
-gap:14px;
+gap:12px;
 
 }
 
-.header-icons i{
+.icon-btn{
 
-width:42px;
+width:48px;
 
-height:42px;
+height:48px;
 
-background:white;
+border:none;
 
 border-radius:50%;
 
-display:flex;
+background:#fff;
 
-align-items:center;
+color:#0b4ea2;
 
-justify-content:center;
-
-font-size:18px;
-
-color:#0a4ea3;
+font-size:20px;
 
 cursor:pointer;
 
-transition:.3s;
-
-}
-
-.header-icons i:hover{
-
-transform:scale(1.08);
+box-shadow:0 4px 10px rgba(0,0,0,.15);
 
 }
 
 /* SEARCH */
 
-.search-area{
+.search-bar{
 
-padding:18px;
+background:#0b4ea2;
 
-background:#0a4ea3;
-
-}
-
-.search-area{
+padding:15px;
 
 display:flex;
 
@@ -148,902 +122,431 @@ gap:10px;
 
 }
 
-.search-area input{
+.search-bar input{
 
 flex:1;
 
-padding:14px;
+height:52px;
 
 border:none;
 
-border-radius:12px;
+border-radius:14px;
 
-font-size:16px;
+padding:0 18px;
+
+font-size:17px;
+
+outline:none;
 
 }
 
-.search-area button{
+.search-bar button{
 
-width:58px;
+width:56px;
 
 border:none;
 
-border-radius:12px;
+border-radius:14px;
 
 background:#ff9800;
 
-color:white;
+color:#fff;
 
-font-size:18px;
+font-size:22px;
+
+cursor:pointer;
 
 }
 
-/* HERO */
+/* MENU */
 
-.hero{
-
-margin:18px;
-
-background:linear-gradient(135deg,#0a4ea3,#1976d2);
-
-border-radius:22px;
-
-padding:22px;
-
-color:white;
+.main-menu{
 
 display:flex;
 
-flex-wrap:wrap;
-
-align-items:center;
-
-justify-content:space-between;
-
-}
-
-.hero-text{
-
-flex:1;
-
-min-width:260px;
-
-}
-
-.hero-text h1{
-
-font-size:34px;
-
-line-height:44px;
-
-margin-bottom:14px;
-
-}
-
-.hero-text p{
-
-font-size:16px;
-
-margin-bottom:20px;
-
-}
-
-.hero-image{
-
-flex:1;
-
-text-align:center;
-
-}
-
-.hero-image img{
-
-max-width:300px;
-
-width:100%;
-
-}
-
-.hero-buttons{
-
-display:flex;
+overflow-x:auto;
 
 gap:12px;
 
-flex-wrap:wrap;
-
-}
-
-.telegram{
-
-background:#229ED9;
-
-padding:14px 22px;
-
-border-radius:12px;
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-}
-
-.whatsapp{
-
-background:#25D366;
-
-padding:14px 22px;
-
-border-radius:12px;
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-}
-/* ===========================
-   PART 2
-   QUICK ACCESS + JOB CARDS
-=========================== */
-
-.quick-menu{
-
-padding:20px;
-
-}
-
-.quick-menu h2{
-
-font-size:28px;
-
-margin-bottom:18px;
-
-color:#0a4ea3;
-
-font-weight:700;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:15px;
-
-}
-
-.grid a{
-
-background:white;
-
-text-decoration:none;
-
-padding:22px;
-
-border-radius:18px;
-
-text-align:center;
-
-font-weight:700;
-
-color:#0a4ea3;
-
-font-size:18px;
-
-box-shadow:0 6px 16px rgba(0,0,0,.08);
-
-transition:.30s;
-
-}
-
-.grid a:hover{
-
-background:#0a4ea3;
-
-color:white;
-
-transform:translateY(-6px);
-
-}
-
-/* BREAKING NEWS */
-
-.breaking-news{
-
-margin:20px;
-
-border-radius:15px;
-
-overflow:hidden;
-
-box-shadow:0 6px 15px rgba(0,0,0,.10);
-
-}
-
-.breaking-title{
-
-background:#ff9800;
-
-color:white;
+background:#165cb6;
 
 padding:12px;
 
-font-size:20px;
+}
 
-font-weight:700;
+.main-menu::-webkit-scrollbar{
 
-text-align:center;
+display:none;
 
 }
 
-.breaking-text{
+.main-menu a{
 
-background:white;
-
-padding:12px;
-
-font-size:16px;
-
-font-weight:600;
-
-}
-
-/* LATEST JOBS */
-
-.latest-section{
-
-padding:20px;
-
-}
-
-.latest-section h2{
-
-font-size:30px;
-
-color:#0a4ea3;
-
-margin-bottom:20px;
-
-}
-
-.job-container{
-
-display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
-}
-
-.job-card{
-
-background:white;
-
-padding:22px;
-
-border-radius:20px;
-
-box-shadow:0 8px 18px rgba(0,0,0,.10);
-
-border-left:7px solid #ff9800;
-
-transition:.30s;
-
-position:relative;
-
-}
-
-.job-card:hover{
-
-transform:translateY(-5px);
-
-}
-
-.new-tag{
-
-position:absolute;
-
-right:15px;
-
-top:15px;
-
-background:red;
-
-color:white;
-
-padding:5px 12px;
-
-border-radius:20px;
-
-font-size:12px;
-
-font-weight:700;
-
-}
-
-.job-card h3{
-
-font-size:24px;
-
-margin-bottom:10px;
-
-color:#0a4ea3;
-
-}
-
-.job-card p{
-
-font-size:17px;
-
-margin-bottom:10px;
-
-}
-
-.job-card a{
-
-display:inline-block;
-
-margin-top:12px;
-
-padding:12px 24px;
-
-background:#0a4ea3;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:10px;
-
-font-weight:600;
-
-}
-
-.job-card a:hover{
-
-background:#ff9800;
-
-}
-
-/* RESULT + ADMIT */
-
-.result-section,
-
-.admit-section{
-
-padding:20px;
-
-}
-
-.result-section h2,
-
-.admit-section h2{
-
-font-size:28px;
-
-color:#0a4ea3;
-
-margin-bottom:18px;
-
-}
-
-.result-list{
-
-display:flex;
-
-flex-direction:column;
-
-gap:14px;
-
-}
-
-.result-list a{
-
-background:white;
-
-padding:18px;
-
-text-decoration:none;
-
-color:#333;
-
-font-size:17px;
-
-font-weight:600;
-
-border-radius:14px;
-
-box-shadow:0 5px 12px rgba(0,0,0,.08);
-
-transition:.25s;
-
-}
-
-.result-list a:hover{
-
-background:#0a4ea3;
-
-color:white;
-
-}
-
-/* ===========================
-   PART 3
-   SOCIAL + FOOTER + BOTTOM NAV
-=========================== */
-
-/* SOCIAL */
-
-.social-section{
-
-padding:20px;
-
-}
-
-.social-section h2{
-
-font-size:30px;
-
-text-align:center;
-
-margin-bottom:20px;
-
-color:#0a4ea3;
-
-}
-
-.social-grid{
-
-display:grid;
-
-grid-template-columns:1fr;
-
-gap:20px;
-
-}
-
-.telegram-card,
-.whatsapp-card{
-
-text-decoration:none;
-
-padding:25px;
-
-border-radius:20px;
-
-color:white;
-
-box-shadow:0 8px 18px rgba(0,0,0,.12);
-
-transition:.3s;
-
-}
-
-.telegram-card{
-
-background:linear-gradient(135deg,#229ED9,#0088cc);
-
-}
-
-.whatsapp-card{
-
-background:linear-gradient(135deg,#25D366,#1fa855);
-
-}
-
-.telegram-card:hover,
-.whatsapp-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.social-grid .icon{
-
-font-size:50px;
-
-margin-bottom:15px;
-
-}
-
-.social-grid h3{
-
-font-size:26px;
-
-margin-bottom:10px;
-
-}
-
-.social-grid p{
-
-font-size:17px;
-
-margin-bottom:12px;
-
-}
-
-.social-grid span{
-
-font-weight:700;
-
-font-size:18px;
-
-}
-
-/* FOOTER */
-
-footer{
-
-margin-top:30px;
-
-background:#0a4ea3;
-
-color:white;
-
-padding:35px 20px 90px;
-
-text-align:center;
-
-}
-
-.footer-logo img{
-
-width:75px;
-
-height:75px;
-
-border-radius:18px;
-
-background:white;
-
-padding:6px;
-
-margin-bottom:12px;
-
-}
-
-.footer-logo h2{
-
-font-size:28px;
-
-margin-bottom:8px;
-
-}
-
-.footer-links{
-
-display:flex;
-
-justify-content:center;
-
-gap:18px;
-
-flex-wrap:wrap;
-
-margin:20px 0;
-
-}
-
-.footer-links a{
-
-color:white;
-
-text-decoration:none;
-
-font-size:16px;
-
-}
-
-.footer-links a:hover{
-
-text-decoration:underline;
-
-}
-
-/* BOTTOM NAV */
-
-.bottom-nav{
-
-position:fixed;
-
-left:0;
-
-bottom:0;
-
-width:100%;
-
-background:white;
-
-display:flex;
-
-justify-content:space-around;
-
-padding:10px 0;
-
-box-shadow:0 -5px 15px rgba(0,0,0,.12);
-
-z-index:9999;
-
-}
-
-.bottom-nav a{
-
-text-decoration:none;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-color:#555;
-
-font-size:12px;
-
-font-weight:600;
-
-}
-
-.bottom-nav a i{
-
-font-size:22px;
-
-margin-bottom:5px;
-
-}
-
-.bottom-nav a.active{
-
-color:#0a4ea3;
-
-}
-
-/* RESPONSIVE */
-
-@media (min-width:768px){
-
-.hero{
-
-padding:35px;
-
-}
-
-.grid{
-
-grid-template-columns:repeat(4,1fr);
-
-}
-
-.job-container{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:20px;
-
-}
-
-.social-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.bottom-nav{
-
-max-width:550px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-border-radius:20px 20px 0 0;
-
-}
-
-}
-
-@media (min-width:1200px){
-
-.hero-text h1{
-
-font-size:48px;
-
-line-height:60px;
-
-}
-
-.job-container{
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-.grid{
-
-grid-template-columns:repeat(4,1fr);
-
-}
-
-}
-/* ===========================
-   MOBILE RESPONSIVE UPDATE
-=========================== */
-
-@media (max-width:768px){
-
-.header,
-.navbar{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:12px 15px;
-flex-wrap:nowrap;
-}
-
-.logo-area,
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-width:auto;
-}
-
-.logo-area img,
-.logo img{
-width:55px;
-height:55px;
-border-radius:12px;
-flex-shrink:0;
-}
-
-.logo-area h2,
-.logo h2{
-font-size:28px;
-line-height:1.1;
-margin:0;
 white-space:nowrap;
+
+background:#2b67bb;
+
+color:#fff;
+
+padding:12px 20px;
+
+border-radius:40px;
+
+font-weight:600;
+
+font-size:15px;
+
 }
 
-.logo-area p,
-.logo p{
+.main-menu a.active{
+
+background:#ff9800;
+
+color:#fff;
+
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero-section{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+padding:45px 30px;
+margin:20px;
+border-radius:22px;
+background:linear-gradient(135deg,#0b4ea2,#1976d2);
+color:#fff;
+overflow:hidden;
+}
+
+.hero-left{
+flex:1;
+}
+
+.hero-tag{
+display:inline-block;
+background:#ffffff22;
+padding:8px 16px;
+border-radius:30px;
 font-size:14px;
-margin-top:2px;
+margin-bottom:18px;
 }
 
-.header-icons,
-.nav-icons{
-display:flex;
-gap:10px;
-}
-
-.header-icons i,
-.nav-icons button{
-width:44px;
-height:44px;
-font-size:20px;
-}
-
-.search-box{
-display:flex;
-padding:15px;
-gap:10px;
-}
-
-.search-box input{
-width:100%;
-font-size:17px;
-height:52px;
-border-radius:12px;
-}
-
-.search-box button{
-width:52px;
-height:52px;
-border-radius:12px;
-}
-
-/* Hero */
-
-.hero{
-display:flex;
-flex-direction:column;
-padding:25px;
-border-radius:20px;
-}
-
-.hero-text{
-width:100%;
-}
-
-.hero-text h1{
+.hero-left h1{
 font-size:46px;
-line-height:1.15;
+line-height:1.2;
 margin-bottom:15px;
+font-weight:700;
 }
 
-.hero-text p{
-font-size:22px;
-line-height:1.5;
+.hero-left p{
+font-size:18px;
+opacity:.95;
+margin-bottom:25px;
 }
 
 .hero-buttons{
 display:flex;
-flex-direction:column;
 gap:15px;
-margin-top:25px;
+flex-wrap:wrap;
+margin-bottom:20px;
 }
 
-.hero-buttons a{
-width:100%;
+.btn-primary,
+.btn-secondary,
+.telegram-btn,
+.whatsapp-btn{
+padding:14px 24px;
+border-radius:12px;
+font-weight:600;
+color:#fff;
+display:inline-block;
+}
+
+.btn-primary{
+background:#ff9800;
+}
+
+.btn-secondary{
+background:#1565c0;
+}
+
+.social-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.telegram-btn{
+background:#29a9ea;
+}
+
+.whatsapp-btn{
+background:#25D366;
+}
+
+.hero-right{
+flex:1;
 text-align:center;
-padding:15px;
-font-size:18px;
-border-radius:14px;
 }
 
-.hero img{
+.hero-right img{
 width:100%;
-max-width:340px;
-display:block;
-margin:30px auto 0;
+max-width:500px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-/* Quick Access */
+/* ===========================
+   QUICK ACCESS
+=========================== */
+
+.quick-access{
+padding:20px;
+}
+
+.quick-access h2{
+font-size:34px;
+color:#0b4ea2;
+margin-bottom:20px;
+}
 
 .quick-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-}
-
-.quick-card{
-padding:18px;
-font-size:17px;
-}
-
-/* Job Cards */
-
-.job-container{
-display:grid;
-grid-template-columns:1fr;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:18px;
 }
 
-.job-card{
+.quick-card{
+background:#fff;
+border-radius:18px;
+padding:22px;
+text-align:center;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+transition:.3s;
+font-size:18px;
+font-weight:600;
+color:#0b4ea2;
+}
+
+.quick-card:hover{
+transform:translateY(-5px);
+}
+
+.quick-card span{
+display:block;
+margin-top:10px;
+}
+
+/* ===========================
+   LATEST UPDATE
+=========================== */
+
+.latest-update{
+margin:20px;
+background:#fff;
+border-radius:18px;
 padding:18px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+.latest-update h2{
+color:#ff6f00;
+margin-bottom:10px;
+}
+
+.latest-update marquee{
+font-size:16px;
+font-weight:600;
+color:#333;
+}
+/* ===========================
+   LATEST JOBS
+=========================== */
+
+.latest-jobs{
+padding:20px;
+}
+
+.latest-jobs h2{
+font-size:34px;
+color:#0b4ea2;
+margin-bottom:20px;
+}
+
+.jobs-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.job-card{
+background:#fff;
+border-radius:18px;
+padding:22px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+border-left:5px solid #ff9800;
+transition:.3s;
+}
+
+.job-card:hover{
+transform:translateY(-5px);
 }
 
 .job-card h3{
-font-size:23px;
+font-size:22px;
+color:#0b4ea2;
+margin-bottom:10px;
 }
 
 .job-card p{
-font-size:17px;
+font-size:15px;
+margin:8px 0;
+color:#555;
 }
 
-/* Bottom Nav */
+.job-card a{
+display:inline-block;
+margin-top:15px;
+padding:12px 22px;
+background:#0b4ea2;
+color:#fff;
+border-radius:10px;
+font-weight:600;
+}
+
+/* ===========================
+   RESULTS
+=========================== */
+
+.latest-results{
+padding:20px;
+}
+
+.latest-results h2{
+font-size:34px;
+color:#0b4ea2;
+margin-bottom:18px;
+}
+
+.result-card{
+background:#fff;
+padding:18px;
+margin-bottom:15px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+background:#0b4ea2;
+color:#fff;
+text-align:center;
+padding:30px 20px;
+margin-top:40px;
+}
+
+/* ===========================
+   BOTTOM NAVIGATION
+=========================== */
 
 .bottom-nav{
-height:72px;
-padding:8px 0;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#fff;
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:10px 0;
+box-shadow:0 -5px 15px rgba(0,0,0,.12);
+z-index:999;
 }
 
 .bottom-nav a{
+color:#0b4ea2;
 font-size:13px;
+font-weight:600;
+text-align:center;
 }
 
 .bottom-nav i{
+display:block;
 font-size:22px;
 margin-bottom:4px;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.hero-section{
+flex-direction:column;
+text-align:center;
+padding:25px;
+}
+
+.hero-left h1{
+font-size:38px;
+}
+
+.hero-left p{
+font-size:17px;
+}
+
+.hero-buttons,
+.social-buttons{
+justify-content:center;
+}
+
+.hero-right img{
+max-width:100%;
+margin-top:20px;
+}
+
+.quick-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.jobs-grid{
+grid-template-columns:1fr;
+}
+
+.logo-text h1{
+font-size:24px;
+}
+
+.logo-text p{
+font-size:12px;
+}
+
+.icon-btn{
+width:42px;
+height:42px;
+font-size:18px;
+}
+
+.search-bar input{
+font-size:15px;
+}
+
+.main-menu a{
+font-size:14px;
+padding:10px 16px;
+}
+
+body{
+padding-bottom:80px;
 }
 
 }
