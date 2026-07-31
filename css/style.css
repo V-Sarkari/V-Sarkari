@@ -550,3 +550,580 @@ padding-bottom:80px;
 }
 
 }
+
+/* ===================================
+   V-SARKARI CSS PART 4
+   JOB DETAILS + INFO BOX + BUTTONS
+===================================*/
+
+/* Page Heading */
+
+.page-title{
+padding:25px 20px 10px;
+}
+
+.page-title h1{
+font-size:34px;
+font-weight:700;
+color:#0b4ea2;
+}
+
+.page-title p{
+margin-top:8px;
+color:#666;
+font-size:16px;
+}
+
+/* Job Detail Container */
+
+.job-detail{
+width:min(1100px,95%);
+margin:25px auto;
+background:#fff;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* Job Title */
+
+.job-detail h2{
+font-size:30px;
+color:#0b4ea2;
+margin-bottom:15px;
+}
+
+/* Information Boxes */
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin:20px 0;
+}
+
+.info-box{
+background:#f7faff;
+border-left:5px solid #0b4ea2;
+border-radius:14px;
+padding:18px;
+}
+
+.info-box span{
+display:block;
+font-size:14px;
+color:#666;
+margin-bottom:6px;
+}
+
+.info-box strong{
+font-size:18px;
+color:#222;
+}
+
+/* Description */
+
+.job-content{
+margin-top:25px;
+line-height:1.8;
+font-size:17px;
+color:#444;
+}
+
+.job-content h3{
+color:#0b4ea2;
+margin:20px 0 10px;
+font-size:24px;
+}
+
+.job-content ul{
+padding-left:20px;
+}
+
+.job-content li{
+margin:8px 0;
+}
+
+/* Buttons */
+
+.job-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.apply-btn,
+.notification-btn,
+.video-btn{
+
+display:inline-block;
+padding:14px 22px;
+border-radius:12px;
+font-weight:600;
+color:#fff;
+text-decoration:none;
+transition:.3s;
+}
+
+.apply-btn{
+background:#0b4ea2;
+}
+
+.notification-btn{
+background:#ff9800;
+}
+
+.video-btn{
+background:#d32f2f;
+}
+
+.apply-btn:hover,
+.notification-btn:hover,
+.video-btn:hover{
+transform:translateY(-3px);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.job-detail{
+padding:18px;
+}
+
+.page-title h1{
+font-size:28px;
+}
+
+.job-detail h2{
+font-size:24px;
+}
+
+.job-buttons{
+flex-direction:column;
+}
+
+.job-buttons a{
+text-align:center;
+}
+
+}
+
+/* ===================================
+   V-SARKARI CSS PART 5
+   DASHBOARD + PROFILE
+===================================*/
+
+/* Dashboard */
+
+.dashboard{
+width:min(1200px,95%);
+margin:30px auto;
+}
+
+.dashboard-title{
+font-size:34px;
+font-weight:700;
+color:#0b4ea2;
+margin-bottom:25px;
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.dashboard-card{
+background:#fff;
+border-radius:18px;
+padding:25px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+border-top:5px solid #0b4ea2;
+}
+
+.dashboard-card:hover{
+transform:translateY(-5px);
+}
+
+.dashboard-card i{
+font-size:42px;
+color:#0b4ea2;
+margin-bottom:15px;
+display:block;
+}
+
+.dashboard-card h3{
+font-size:22px;
+margin-bottom:10px;
+color:#222;
+}
+
+.dashboard-card p{
+color:#666;
+font-size:15px;
+line-height:1.6;
+}
+
+/* Profile */
+
+.profile-box{
+width:min(900px,95%);
+margin:35px auto;
+background:#fff;
+border-radius:20px;
+padding:30px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.profile-img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #0b4ea2;
+margin-bottom:18px;
+}
+
+.profile-box h2{
+font-size:30px;
+color:#0b4ea2;
+margin-bottom:8px;
+}
+
+.profile-box p{
+font-size:16px;
+color:#666;
+margin-bottom:20px;
+}
+
+.profile-info{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:20px;
+}
+
+.profile-item{
+background:#f5f9ff;
+padding:18px;
+border-radius:14px;
+}
+
+.profile-item span{
+display:block;
+font-size:14px;
+color:#666;
+margin-bottom:6px;
+}
+
+.profile-item strong{
+font-size:18px;
+color:#222;
+}
+
+@media(max-width:768px){
+
+.dashboard-title{
+font-size:28px;
+}
+
+.profile-box{
+padding:20px;
+}
+
+.profile-img{
+width:100px;
+height:100px;
+}
+
+.profile-box h2{
+font-size:24px;
+}
+
+}
+
+   /* ===================================
+   V-SARKARI CSS PART 5
+   DASHBOARD + PROFILE
+===================================*/
+
+/* Dashboard */
+
+.dashboard{
+width:min(1200px,95%);
+margin:30px auto;
+}
+
+.dashboard-title{
+font-size:34px;
+font-weight:700;
+color:#0b4ea2;
+margin-bottom:25px;
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.dashboard-card{
+background:#fff;
+border-radius:18px;
+padding:25px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+border-top:5px solid #0b4ea2;
+}
+
+.dashboard-card:hover{
+transform:translateY(-5px);
+}
+
+.dashboard-card i{
+font-size:42px;
+color:#0b4ea2;
+margin-bottom:15px;
+display:block;
+}
+
+.dashboard-card h3{
+font-size:22px;
+margin-bottom:10px;
+color:#222;
+}
+
+.dashboard-card p{
+color:#666;
+font-size:15px;
+line-height:1.6;
+}
+
+/* Profile */
+
+.profile-box{
+width:min(900px,95%);
+margin:35px auto;
+background:#fff;
+border-radius:20px;
+padding:30px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.profile-img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #0b4ea2;
+margin-bottom:18px;
+}
+
+.profile-box h2{
+font-size:30px;
+color:#0b4ea2;
+margin-bottom:8px;
+}
+
+.profile-box p{
+font-size:16px;
+color:#666;
+margin-bottom:20px;
+}
+
+.profile-info{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:20px;
+}
+
+.profile-item{
+background:#f5f9ff;
+padding:18px;
+border-radius:14px;
+}
+
+.profile-item span{
+display:block;
+font-size:14px;
+color:#666;
+margin-bottom:6px;
+}
+
+.profile-item strong{
+font-size:18px;
+color:#222;
+}
+
+@media(max-width:768px){
+
+.dashboard-title{
+font-size:28px;
+}
+
+.profile-box{
+padding:20px;
+}
+
+.profile-img{
+width:100px;
+height:100px;
+}
+
+.profile-box h2{
+font-size:24px;
+}
+
+}
+/* ===================================
+   V-SARKARI CSS PART 6
+   LOGIN + AI + SETTINGS + NOTIFICATION
+===================================*/
+
+/* Login */
+
+.login-box{
+width:min(450px,95%);
+margin:40px auto;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.login-box h2{
+text-align:center;
+color:#0b4ea2;
+margin-bottom:20px;
+}
+
+.login-box input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.login-box button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#0b4ea2;
+color:#fff;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+}
+
+/* AI Assistant */
+
+.ai-box{
+width:min(1000px,95%);
+margin:30px auto;
+background:#fff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.ai-box h2{
+color:#0b4ea2;
+margin-bottom:15px;
+}
+
+.ai-chat{
+height:350px;
+overflow-y:auto;
+background:#f7faff;
+border-radius:12px;
+padding:15px;
+margin-bottom:15px;
+}
+
+.ai-input{
+display:flex;
+gap:10px;
+}
+
+.ai-input input{
+flex:1;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.ai-input button{
+padding:14px 20px;
+border:none;
+background:#0b4ea2;
+color:#fff;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* Notification */
+
+.notification-card{
+background:#fff8e1;
+border-left:5px solid #ff9800;
+padding:18px;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.notification-card h3{
+margin-bottom:8px;
+color:#ff6f00;
+}
+
+/* Settings */
+
+.settings-box{
+background:#fff;
+padding:20px;
+border-radius:18px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+margin:25px auto;
+width:min(900px,95%);
+}
+
+.settings-box h2{
+color:#0b4ea2;
+margin-bottom:20px;
+}
+
+.setting-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.setting-item:last-child{
+border-bottom:none;
+}
+
+@media(max-width:768px){
+
+.ai-input{
+flex-direction:column;
+}
+
+.setting-item{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+}
+
