@@ -874,3 +874,176 @@ grid-template-columns:repeat(4,1fr);
 }
 
 }
+/* ===========================
+   MOBILE RESPONSIVE UPDATE
+=========================== */
+
+@media (max-width:768px){
+
+.header,
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 15px;
+flex-wrap:nowrap;
+}
+
+.logo-area,
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+width:auto;
+}
+
+.logo-area img,
+.logo img{
+width:55px;
+height:55px;
+border-radius:12px;
+flex-shrink:0;
+}
+
+.logo-area h2,
+.logo h2{
+font-size:28px;
+line-height:1.1;
+margin:0;
+white-space:nowrap;
+}
+
+.logo-area p,
+.logo p{
+font-size:14px;
+margin-top:2px;
+}
+
+.header-icons,
+.nav-icons{
+display:flex;
+gap:10px;
+}
+
+.header-icons i,
+.nav-icons button{
+width:44px;
+height:44px;
+font-size:20px;
+}
+
+.search-box{
+display:flex;
+padding:15px;
+gap:10px;
+}
+
+.search-box input{
+width:100%;
+font-size:17px;
+height:52px;
+border-radius:12px;
+}
+
+.search-box button{
+width:52px;
+height:52px;
+border-radius:12px;
+}
+
+/* Hero */
+
+.hero{
+display:flex;
+flex-direction:column;
+padding:25px;
+border-radius:20px;
+}
+
+.hero-text{
+width:100%;
+}
+
+.hero-text h1{
+font-size:46px;
+line-height:1.15;
+margin-bottom:15px;
+}
+
+.hero-text p{
+font-size:22px;
+line-height:1.5;
+}
+
+.hero-buttons{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:25px;
+}
+
+.hero-buttons a{
+width:100%;
+text-align:center;
+padding:15px;
+font-size:18px;
+border-radius:14px;
+}
+
+.hero img{
+width:100%;
+max-width:340px;
+display:block;
+margin:30px auto 0;
+}
+
+/* Quick Access */
+
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.quick-card{
+padding:18px;
+font-size:17px;
+}
+
+/* Job Cards */
+
+.job-container{
+display:grid;
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.job-card{
+padding:18px;
+}
+
+.job-card h3{
+font-size:23px;
+}
+
+.job-card p{
+font-size:17px;
+}
+
+/* Bottom Nav */
+
+.bottom-nav{
+height:72px;
+padding:8px 0;
+}
+
+.bottom-nav a{
+font-size:13px;
+}
+
+.bottom-nav i{
+font-size:22px;
+margin-bottom:4px;
+}
+
+}
