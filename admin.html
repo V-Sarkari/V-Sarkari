@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>V-Sarkari | Admin Panel</title>
 
 <link rel="stylesheet" href="css/style.css">
@@ -12,6 +14,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
 <style>
+
 body{
     background:#f4f7fb;
     font-family:Poppins,Arial,sans-serif;
@@ -26,7 +29,9 @@ body{
     text-align:center;
 }
 
-.admin-header h2{margin:0;}
+.admin-header h2{
+    margin:0;
+}
 
 .admin-container{
     max-width:950px;
@@ -63,7 +68,9 @@ label{
     margin:12px 0 6px;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
     width:100%;
     box-sizing:border-box;
     border:1px solid #ccd6e0;
@@ -78,7 +85,9 @@ textarea{
     resize:vertical;
 }
 
-input:focus,textarea:focus,select:focus{
+input:focus,
+textarea:focus,
+select:focus{
     border-color:#0b66b2;
 }
 
@@ -139,6 +148,11 @@ input:focus,textarea:focus,select:focus{
     background:#d97800;
 }
 
+.publish-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
 .login-area{
     max-width:950px;
     margin:15px auto;
@@ -174,8 +188,18 @@ input:focus,textarea:focus,select:focus{
     margin-top:4px;
 }
 
+.link-note{
+    background:#eef6ff;
+    border-left:4px solid #0b66b2;
+    padding:10px;
+    margin-top:10px;
+    font-size:13px;
+}
+
 @media(max-width:700px){
-    .grid2,.grid3{
+
+    .grid2,
+    .grid3{
         grid-template-columns:1fr;
     }
 
@@ -183,20 +207,30 @@ input:focus,textarea:focus,select:focus{
         margin:10px;
         padding:12px;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
+
 <header class="admin-header">
+
     <h2>⚙️ V-Sarkari Admin Panel</h2>
+
     <p>Add / Manage Government Jobs</p>
+
 </header>
+
 
 <div class="login-area">
 
-    <button id="googleLogin">🔐 Login with Google</button>
+    <button id="googleLogin">
+        🔐 Login with Google
+    </button>
 
     <button id="googleLogout" style="display:none;">
         🚪 Logout
@@ -210,125 +244,251 @@ input:focus,textarea:focus,select:focus{
 <h2>📢 Add New Government Job</h2>
 
 
+<!-- ========================================= -->
 <!-- BASIC INFORMATION -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📌 Basic Information</div>
+<div class="section-title">
+📌 Basic Information
+</div>
 
 <div class="section-body">
 
 <div class="grid2">
 
 <div>
+
 <label>Job Title *</label>
-<input id="jobTitle" placeholder="Example: SSC CGL Recruitment 2026">
+
+<input
+id="jobTitle"
+placeholder="Example: SSC GD Constable Recruitment 2026">
+
 </div>
+
 
 <div>
+
 <label>Organization / Department *</label>
-<input id="department" placeholder="Example: Staff Selection Commission">
+
+<input
+id="department"
+placeholder="Example: Staff Selection Commission">
+
 </div>
 
 </div>
+
 
 <div class="grid2">
 
 <div>
+
 <label>Post Name</label>
-<input id="postName" placeholder="Example: Various Posts">
+
+<input
+id="postName"
+placeholder="Example: Constable GD">
+
 </div>
+
 
 <div>
+
 <label>Advertisement / Notification No.</label>
-<input id="advertisementNo" placeholder="Example: 01/2026">
+
+<input
+id="advertisementNo"
+placeholder="Example: 01/2026">
+
 </div>
 
 </div>
+
 
 <div class="grid3">
 
 <div>
+
 <label>Category</label>
+
 <select id="category">
-<option value="Latest Jobs">Latest Jobs</option>
-<option value="Central Government">Central Government</option>
-<option value="State Government">State Government</option>
-<option value="Railway">Railway</option>
-<option value="Banking">Banking</option>
-<option value="Defence">Defence</option>
-<option value="Police">Police</option>
-<option value="Teaching">Teaching</option>
-<option value="Other">Other</option>
+
+<option value="Latest Jobs">
+Latest Jobs
+</option>
+
+<option value="Central Government">
+Central Government
+</option>
+
+<option value="State Government">
+State Government
+</option>
+
+<option value="Railway">
+Railway
+</option>
+
+<option value="Banking">
+Banking
+</option>
+
+<option value="Defence">
+Defence
+</option>
+
+<option value="Police">
+Police
+</option>
+
+<option value="Teaching">
+Teaching
+</option>
+
+<option value="Other">
+Other
+</option>
+
 </select>
+
 </div>
 
+
 <div>
+
 <label>Total Vacancy</label>
-<input id="vacancy" placeholder="Example: 500">
+
+<input
+id="vacancy"
+placeholder="Example: 25000">
+
 </div>
+
 
 <div>
+
 <label>Application Mode</label>
+
 <select id="applicationMode">
+
 <option>Online</option>
+
 <option>Offline</option>
+
 <option>Online / Offline</option>
+
 </select>
+
 </div>
 
 </div>
+
 
 <label>Job Location</label>
-<input id="jobLocation" placeholder="Example: All India">
+
+<input
+id="jobLocation"
+placeholder="Example: All India">
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- MAIN LINKS -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">🔗 Main Links</div>
+<div class="section-title">
+🔗 Main Links
+</div>
 
 <div class="section-body">
+
 
 <label>Apply Online Link</label>
-<input type="url" id="applyLink" placeholder="https://...">
+
+<input
+type="url"
+id="applyLink"
+placeholder="https://...">
+
 
 <label>Official Notification Link / PDF</label>
-<input type="url" id="notificationLink" placeholder="https://...">
+
+<input
+type="url"
+id="notificationLink"
+placeholder="https://...">
+
 
 <label>Official Website Link</label>
-<input type="url" id="officialLink" placeholder="https://...">
+
+<input
+type="url"
+id="officialLink"
+placeholder="https://...">
+
 
 <label>Telegram Link</label>
-<input type="url" id="telegramLink" placeholder="https://t.me/...">
+
+<input
+type="url"
+id="telegramLink"
+placeholder="https://t.me/...">
+
 
 <label>WhatsApp Channel Link</label>
-<input type="url" id="whatsappLink" placeholder="https://whatsapp.com/channel/...">
+
+<input
+type="url"
+id="whatsappLink"
+placeholder="https://whatsapp.com/channel/...">
+
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- ABOUT -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">🏢 About Organization</div>
+<div class="section-title">
+🏢 About Organization
+</div>
 
 <div class="section-body">
 
-<textarea id="aboutOrganization"
+<textarea
+id="aboutOrganization"
 placeholder="Paste complete organization information here..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- IMPORTANT DATES -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📅 Important Dates</div>
+<div class="section-title">
+📅 Important Dates
+</div>
 
 <div class="section-body">
 
@@ -337,33 +497,60 @@ placeholder="Paste complete organization information here..."></textarea>
 <div class="row-box date-row">
 
 <div class="grid2">
-<input class="date-label" placeholder="Date Name — Application Start">
-<input class="date-value" placeholder="Date — 01-08-2026">
+
+<input
+class="date-label"
+placeholder="Date Name — Application Start">
+
+<input
+class="date-value"
+placeholder="Date — 01-08-2026">
+
 </div>
 
-<button type="button" class="remove-btn"
-onclick="this.parentElement.remove()">Remove</button>
+<button
+type="button"
+class="remove-btn"
+onclick="this.parentElement.remove()">
 
-</div>
+Remove
 
-</div>
-
-<button type="button" class="add-btn" onclick="addDate()">
-+ Add Another Date
 </button>
 
 </div>
+
 </div>
 
 
+<button
+type="button"
+class="add-btn"
+onclick="addDate()">
+
++ Add Another Date
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================================= -->
 <!-- FEE -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">💰 Application Fee</div>
+<div class="section-title">
+💰 Application Fee
+</div>
 
 <div class="section-body">
 
-<textarea id="applicationFee"
+<textarea
+id="applicationFee"
 placeholder="Paste complete application fee details...
 
 Example:
@@ -373,73 +560,122 @@ Female - ₹0
 Payment Mode - Online"></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- AGE -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">👤 Age Limit</div>
+<div class="section-title">
+👤 Age Limit
+</div>
 
 <div class="section-body">
 
 <div class="grid3">
 
 <div>
+
 <label>Minimum Age</label>
-<input id="minAge" placeholder="18 Years">
+
+<input
+id="minAge"
+placeholder="18 Years">
+
 </div>
 
+
 <div>
+
 <label>Maximum Age</label>
-<input id="maxAge" placeholder="30 Years">
+
+<input
+id="maxAge"
+placeholder="30 Years">
+
 </div>
+
 
 <div>
+
 <label>Age Cut-off Date</label>
-<input id="ageCutoffDate" placeholder="01-01-2026">
+
+<input
+id="ageCutoffDate"
+placeholder="01-01-2026">
+
 </div>
 
 </div>
+
 
 <label>Age Relaxation</label>
 
-<textarea id="ageRelaxation"
+<textarea
+id="ageRelaxation"
 placeholder="Paste complete age relaxation details..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- SALARY -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">💵 Salary / Pay Scale</div>
+<div class="section-title">
+💵 Salary / Pay Scale
+</div>
 
 <div class="section-body">
 
-<label>Salary / Pay Scale</label>
+<label>
+Salary / Pay Scale
+</label>
 
-<input id="salary"
+<input
+id="salary"
 placeholder="Example: ₹25,500 - ₹81,100">
 
-<label>Complete Salary Details</label>
 
-<textarea id="salaryDetails"
+<label>
+Complete Salary Details
+</label>
+
+<textarea
+id="salaryDetails"
 placeholder="Paste complete salary/pay level/allowance details..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- VACANCY -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📊 Vacancy Details</div>
+<div class="section-title">
+📊 Vacancy Details
+</div>
 
 <div class="section-body">
 
-<h4>Post-wise Vacancy</h4>
+<h4>
+Post-wise Vacancy
+</h4>
 
 <div id="vacancyContainer">
 
@@ -447,29 +683,50 @@ placeholder="Paste complete salary/pay level/allowance details..."></textarea>
 
 <div class="grid3">
 
-<input class="v-post" placeholder="Post Name">
+<input
+class="v-post"
+placeholder="Post Name">
 
-<input class="v-total" placeholder="Total">
+<input
+class="v-total"
+placeholder="Total">
 
-<input class="v-eligibility" placeholder="Eligibility">
+<input
+class="v-eligibility"
+placeholder="Eligibility">
 
 </div>
 
-<button type="button" class="remove-btn"
-onclick="this.parentElement.remove()">Remove</button>
+<button
+type="button"
+class="remove-btn"
+onclick="this.parentElement.remove()">
+
+Remove
+
+</button>
 
 </div>
 
 </div>
 
-<button type="button" class="add-btn" onclick="addVacancy()">
+
+<button
+type="button"
+class="add-btn"
+onclick="addVacancy()">
+
 + Add Post
+
 </button>
 
 
-<label>Category-wise Vacancy</label>
+<label>
+Category-wise Vacancy
+</label>
 
-<textarea id="categoryVacancy"
+<textarea
+id="categoryVacancy"
 placeholder="UR:
 EWS:
 OBC:
@@ -479,73 +736,113 @@ PwD:
 Other:"></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- QUALIFICATION -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">🎓 Educational Qualification & Experience</div>
+<div class="section-title">
+🎓 Educational Qualification & Experience
+</div>
 
 <div class="section-body">
 
-<textarea id="qualification"
+<textarea
+id="qualification"
 placeholder="Paste COMPLETE qualification and experience details here..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- OVERVIEW -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📖 Job Overview / Details & Information</div>
+<div class="section-title">
+📖 Job Overview / Details & Information
+</div>
 
 <div class="section-body">
 
-<textarea id="jobOverview"
+<textarea
+id="jobOverview"
 placeholder="Paste the complete detailed job overview here..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- POSTING -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📍 Job Posting Locations</div>
+<div class="section-title">
+📍 Job Posting Locations
+</div>
 
 <div class="section-body">
 
-<textarea id="postingLocations"
+<textarea
+id="postingLocations"
 placeholder="Paste complete posting/location information..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- RESPONSIBILITIES -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">💼 Job Responsibilities</div>
+<div class="section-title">
+💼 Job Responsibilities
+</div>
 
 <div class="section-body">
 
-<textarea id="responsibilities"
+<textarea
+id="responsibilities"
 placeholder="Paste all responsibilities here..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- SELECTION -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📝 Selection Process</div>
+<div class="section-title">
+📝 Selection Process
+</div>
 
 <div class="section-body">
 
-<textarea id="selectionProcess"
+<textarea
+id="selectionProcess"
 placeholder="Paste complete selection process...
 
 Example:
@@ -555,60 +852,185 @@ Example:
 4. Medical Examination"></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- EXAM -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📚 Exam Pattern & Syllabus</div>
+<div class="section-title">
+📚 Exam Pattern & Syllabus
+</div>
 
 <div class="section-body">
 
-<textarea id="examPattern"
+<textarea
+id="examPattern"
 placeholder="Paste complete exam pattern here..."></textarea>
 
-<label>Syllabus</label>
 
-<textarea id="syllabus"
+<label>
+Syllabus
+</label>
+
+<textarea
+id="syllabus"
 placeholder="Paste complete syllabus here..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- HOW TO APPLY -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📝 How to Apply</div>
+<div class="section-title">
+📝 How to Apply
+</div>
 
 <div class="section-body">
 
-<textarea id="howToApply"
+<textarea
+id="howToApply"
 placeholder="Paste COMPLETE application procedure here..."></textarea>
 
 </div>
+
 </div>
 
 
-<!-- INSTRUCTIONS -->
+
+<!-- ========================================= -->
+<!-- YOUTUBE VIDEO -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">⚠️ Important Instructions</div>
+<div class="section-title">
+📺 Form कैसे भरें? — YouTube Video
+</div>
 
 <div class="section-body">
 
-<textarea id="importantInstructions"
+<label>
+इस भर्ती की YouTube Video Link
+</label>
+
+<input
+type="url"
+id="youtubeVideoLink"
+placeholder="https://youtu.be/XXXXXXXXXXX">
+
+<div class="link-note">
+
+📺 यहाँ <b>इस भर्ती के फॉर्म भरने की वीडियो</b>
+का YouTube लिंक डालें।
+
+<br><br>
+
+आपका मुख्य V-Sarkari YouTube Channel
+अलग से वेबसाइट के Menu में रहेगा।
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================================= -->
+<!-- ADMIT CARD & RESULT -->
+<!-- ========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+🪪 Admit Card & 📊 Result
+</div>
+
+<div class="section-body">
+
+
+<label>
+🪪 Admit Card Link
+</label>
+
+<input
+type="url"
+id="admitCardLink"
+placeholder="https://...">
+
+
+<label>
+📊 Result Link
+</label>
+
+<input
+type="url"
+id="resultLink"
+placeholder="https://...">
+
+
+<div class="link-note">
+
+ℹ️ भर्ती publish करते समय ये दोनों खाली छोड़ सकते हैं।
+
+<br><br>
+
+बाद में Admit Card आने पर
+Admit Card Link और Result आने पर
+Result Link जोड़ सकते हैं।
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================================= -->
+<!-- IMPORTANT INSTRUCTIONS -->
+<!-- ========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+⚠️ Important Instructions
+</div>
+
+<div class="section-body">
+
+<textarea
+id="importantInstructions"
 placeholder="Paste all important instructions here..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- FAQ -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">❓ Frequently Asked Questions</div>
+<div class="section-title">
+❓ Frequently Asked Questions
+</div>
 
 <div class="section-body">
 
@@ -616,152 +1038,240 @@ placeholder="Paste all important instructions here..."></textarea>
 
 <div class="row-box faq-row">
 
-<label>Question</label>
-<input class="faq-question"
+<label>
+Question
+</label>
+
+<input
+class="faq-question"
 placeholder="What is the last date to apply?">
 
-<label>Answer</label>
-<textarea class="faq-answer"
+
+<label>
+Answer
+</label>
+
+<textarea
+class="faq-answer"
 placeholder="Enter answer..."></textarea>
 
-<button type="button" class="remove-btn"
-onclick="this.parentElement.remove()">Remove</button>
 
-</div>
+<button
+type="button"
+class="remove-btn"
+onclick="this.parentElement.remove()">
 
-</div>
+Remove
 
-<button type="button" class="add-btn" onclick="addFAQ()">
-+ Add FAQ
 </button>
 
 </div>
+
 </div>
 
 
+<button
+type="button"
+class="add-btn"
+onclick="addFAQ()">
+
++ Add FAQ
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================================= -->
 <!-- EXTRA -->
+<!-- ========================================= -->
+
 <div class="section">
 
-<div class="section-title">📄 Additional / Extra Information</div>
+<div class="section-title">
+📄 Additional / Extra Information
+</div>
 
 <div class="section-body">
 
-<textarea id="additionalInfo"
+<textarea
+id="additionalInfo"
 placeholder="Anything else that should appear on the Job Details page..."></textarea>
 
 </div>
+
 </div>
 
 
+
+<!-- ========================================= -->
 <!-- PUBLISH -->
-<button id="publishBtn" class="publish-btn">
+<!-- ========================================= -->
+
+<button
+id="publishBtn"
+class="publish-btn"
+disabled>
+
 🚀 Publish Job
+
 </button>
 
 <p id="successMsg"></p>
 
+
 </main>
 
+
+
+<!-- ========================================= -->
+<!-- ADD DATE / VACANCY / FAQ FUNCTIONS -->
+<!-- ========================================= -->
 
 <script>
 
 function addDate(){
 
-const box=document.createElement("div");
+    const box =
+        document.createElement("div");
 
-box.className="row-box date-row";
+    box.className =
+        "row-box date-row";
 
-box.innerHTML=`
+    box.innerHTML = `
 
-<div class="grid2">
+        <div class="grid2">
 
-<input class="date-label"
-placeholder="Date Name">
+            <input
+                class="date-label"
+                placeholder="Date Name">
 
-<input class="date-value"
-placeholder="Date">
+            <input
+                class="date-value"
+                placeholder="Date">
 
-</div>
+        </div>
 
-<button type="button"
-class="remove-btn"
-onclick="this.parentElement.remove()">
-Remove
-</button>
-`;
+        <button
+            type="button"
+            class="remove-btn"
+            onclick="this.parentElement.remove()">
 
-document.getElementById("datesContainer").appendChild(box);
+            Remove
+
+        </button>
+
+    `;
+
+    document
+        .getElementById("datesContainer")
+        .appendChild(box);
 
 }
 
 
 function addVacancy(){
 
-const box=document.createElement("div");
+    const box =
+        document.createElement("div");
 
-box.className="row-box vacancy-row";
+    box.className =
+        "row-box vacancy-row";
 
-box.innerHTML=`
+    box.innerHTML = `
 
-<div class="grid3">
+        <div class="grid3">
 
-<input class="v-post"
-placeholder="Post Name">
+            <input
+                class="v-post"
+                placeholder="Post Name">
 
-<input class="v-total"
-placeholder="Total">
+            <input
+                class="v-total"
+                placeholder="Total">
 
-<input class="v-eligibility"
-placeholder="Eligibility">
+            <input
+                class="v-eligibility"
+                placeholder="Eligibility">
 
-</div>
+        </div>
 
-<button type="button"
-class="remove-btn"
-onclick="this.parentElement.remove()">
-Remove
-</button>
-`;
+        <button
+            type="button"
+            class="remove-btn"
+            onclick="this.parentElement.remove()">
 
-document.getElementById("vacancyContainer").appendChild(box);
+            Remove
+
+        </button>
+
+    `;
+
+    document
+        .getElementById("vacancyContainer")
+        .appendChild(box);
 
 }
 
 
 function addFAQ(){
 
-const box=document.createElement("div");
+    const box =
+        document.createElement("div");
 
-box.className="row-box faq-row";
+    box.className =
+        "row-box faq-row";
 
-box.innerHTML=`
+    box.innerHTML = `
 
-<label>Question</label>
+        <label>
+            Question
+        </label>
 
-<input class="faq-question"
-placeholder="Question">
+        <input
+            class="faq-question"
+            placeholder="Question">
 
-<label>Answer</label>
+        <label>
+            Answer
+        </label>
 
-<textarea class="faq-answer"
-placeholder="Answer"></textarea>
+        <textarea
+            class="faq-answer"
+            placeholder="Answer"></textarea>
 
-<button type="button"
-class="remove-btn"
-onclick="this.parentElement.remove()">
-Remove
-</button>
-`;
+        <button
+            type="button"
+            class="remove-btn"
+            onclick="this.parentElement.remove()">
 
-document.getElementById("faqContainer").appendChild(box);
+            Remove
+
+        </button>
+
+    `;
+
+    document
+        .getElementById("faqContainer")
+        .appendChild(box);
 
 }
 
 </script>
 
 
+
+<!-- ========================================= -->
+<!-- FIREBASE + ADMIN JS -->
+<!-- ========================================= -->
+
 <script src="js/firebase.js"></script>
+
 <script src="js/admin.js"></script>
+
 
 </body>
 </html>
