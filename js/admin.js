@@ -7,12 +7,22 @@
 // auth और db पहले से firebase.js में बने हुए हैं.
 // इसलिए यहाँ const auth / const db दोबारा नहीं बनाए गए हैं.
 
-const googleLogin = document.getElementById("googleLogin");
-const googleLogout = document.getElementById("googleLogout");
-const publishBtn = document.getElementById("publishBtn");
-const successMsg = document.getElementById("successMsg");
 
-const ADMIN_EMAIL = "officialvsarkari@gmail.com";
+const googleLogin =
+    document.getElementById("googleLogin");
+
+const googleLogout =
+    document.getElementById("googleLogout");
+
+const publishBtn =
+    document.getElementById("publishBtn");
+
+const successMsg =
+    document.getElementById("successMsg");
+
+
+const ADMIN_EMAIL =
+    "officialvsarkari@gmail.com";
 
 
 // ==========================================
@@ -21,35 +31,39 @@ const ADMIN_EMAIL = "officialvsarkari@gmail.com";
 
 if (googleLogin) {
 
-    googleLogin.addEventListener("click", async function () {
+    googleLogin.addEventListener(
+        "click",
+        async function () {
 
-        try {
+            try {
 
-            const provider =
-                new firebase.auth.GoogleAuthProvider();
+                const provider =
+                    new firebase.auth.GoogleAuthProvider();
 
-            provider.setCustomParameters({
-                prompt: "select_account"
-            });
+                provider.setCustomParameters({
+                    prompt: "select_account"
+                });
 
-            await auth.signInWithPopup(provider);
+                await auth.signInWithPopup(provider);
 
-        } catch (error) {
+            }
 
-            console.error("Google Login Error:", error);
+            catch (error) {
 
-            alert(
-                "❌ Google Login Failed\n\n" +
-                error.message
-            );
+                console.error(
+                    "Google Login Error:",
+                    error
+                );
+
+                alert(
+                    "❌ Google Login Failed\n\n" +
+                    error.message
+                );
+
+            }
 
         }
-
-    });
-
-} else {
-
-    console.error("❌ googleLogin button नहीं मिला.");
+    );
 
 }
 
@@ -60,26 +74,36 @@ if (googleLogin) {
 
 if (googleLogout) {
 
-    googleLogout.addEventListener("click", async function () {
+    googleLogout.addEventListener(
+        "click",
+        async function () {
 
-        try {
+            try {
 
-            await auth.signOut();
+                await auth.signOut();
 
-            alert("✅ Logout Successfully");
+                alert(
+                    "✅ Logout Successfully"
+                );
 
-        } catch (error) {
+            }
 
-            console.error("Logout Error:", error);
+            catch (error) {
 
-            alert(
-                "❌ Logout Failed\n\n" +
-                error.message
-            );
+                console.error(
+                    "Logout Error:",
+                    error
+                );
+
+                alert(
+                    "❌ Logout Failed\n\n" +
+                    error.message
+                );
+
+            }
 
         }
-
-    });
+    );
 
 }
 
@@ -88,96 +112,125 @@ if (googleLogout) {
 // AUTH STATE
 // ==========================================
 
-auth.onAuthStateChanged(function (user) {
+auth.onAuthStateChanged(
+    function(user) {
 
-    if (user) {
+        if (user) {
 
-        console.log("Logged in:", user.email);
-
-
-        // ADMIN EMAIL CHECK
-
-        if (
-            !user.email ||
-            user.email.toLowerCase() !==
-            ADMIN_EMAIL.toLowerCase()
-        ) {
-
-            alert(
-                "❌ Access Denied\n\n" +
-                "केवल इस Admin Gmail से login करें:\n\n" +
-                ADMIN_EMAIL
+            console.log(
+                "Logged in:",
+                user.email
             );
 
-            auth.signOut();
 
-            return;
+            // ADMIN EMAIL CHECK
+
+            if (
+                !user.email ||
+                user.email.toLowerCase() !==
+                ADMIN_EMAIL.toLowerCase()
+            ) {
+
+                alert(
+                    "❌ Access Denied\n\n" +
+                    "केवल इस Admin Gmail से login करें:\n\n" +
+                    ADMIN_EMAIL
+                );
+
+                auth.signOut();
+
+                return;
+            }
+
+
+            // LOGIN BUTTON HIDE
+
+            if (googleLogin) {
+
+                googleLogin.style.display =
+                    "none";
+
+            }
+
+
+            // LOGOUT BUTTON SHOW
+
+            if (googleLogout) {
+
+                googleLogout.style.display =
+                    "inline-block";
+
+            }
+
+
+            // PUBLISH ENABLE
+
+            if (publishBtn) {
+
+                publishBtn.disabled =
+                    false;
+
+            }
+
+
+            // SUCCESS MESSAGE
+
+            if (successMsg) {
+
+                successMsg.textContent =
+                    "✅ Admin Login Successful: " +
+                    user.email;
+
+                successMsg.style.color =
+                    "green";
+
+            }
+
         }
 
+        else {
 
-        // LOGIN BUTTON HIDE
+            // LOGIN BUTTON SHOW
 
-        if (googleLogin) {
-            googleLogin.style.display = "none";
-        }
+            if (googleLogin) {
 
+                googleLogin.style.display =
+                    "inline-block";
 
-        // LOGOUT BUTTON SHOW
-
-        if (googleLogout) {
-            googleLogout.style.display = "inline-block";
-        }
+            }
 
 
-        // PUBLISH ENABLE
+            // LOGOUT BUTTON HIDE
 
-        if (publishBtn) {
-            publishBtn.disabled = false;
-        }
+            if (googleLogout) {
 
+                googleLogout.style.display =
+                    "none";
 
-        // LOGIN SUCCESS
-
-        if (successMsg) {
-
-            successMsg.textContent =
-                "✅ Admin Login Successful: " +
-                user.email;
-
-            successMsg.style.color = "green";
-        }
-
-    } else {
+            }
 
 
-        // LOGIN BUTTON SHOW
+            // PUBLISH DISABLE
 
-        if (googleLogin) {
-            googleLogin.style.display = "inline-block";
-        }
+            if (publishBtn) {
 
+                publishBtn.disabled =
+                    true;
 
-        // LOGOUT BUTTON HIDE
-
-        if (googleLogout) {
-            googleLogout.style.display = "none";
-        }
+            }
 
 
-        // PUBLISH DISABLE
+            if (successMsg) {
 
-        if (publishBtn) {
-            publishBtn.disabled = true;
-        }
+                successMsg.textContent =
+                    "";
 
+            }
 
-        if (successMsg) {
-            successMsg.textContent = "";
         }
 
     }
-
-});
+);
 
 
 // ==========================================
@@ -203,40 +256,60 @@ function getValue(id) {
 function collectDates() {
 
     const rows =
-        document.querySelectorAll(".date-row");
+        document.querySelectorAll(
+            ".date-row"
+        );
 
     const dates = [];
 
-    rows.forEach(function (row) {
 
-        const label =
-            row.querySelector(".date-label");
+    rows.forEach(
+        function(row) {
 
-        const value =
-            row.querySelector(".date-value");
+            const label =
+                row.querySelector(
+                    ".date-label"
+                );
 
-        if (!label || !value) return;
+            const value =
+                row.querySelector(
+                    ".date-value"
+                );
 
-        if (
-            label.value.trim() ||
-            value.value.trim()
-        ) {
 
-            dates.push({
+            if (
+                !label ||
+                !value
+            ) {
 
-                label:
-                    label.value.trim(),
+                return;
 
-                value:
-                    value.value.trim()
+            }
 
-            });
+
+            if (
+                label.value.trim() ||
+                value.value.trim()
+            ) {
+
+                dates.push({
+
+                    label:
+                        label.value.trim(),
+
+                    value:
+                        value.value.trim()
+
+                });
+
+            }
 
         }
+    );
 
-    });
 
     return dates;
+
 }
 
 
@@ -247,51 +320,70 @@ function collectDates() {
 function collectVacancies() {
 
     const rows =
-        document.querySelectorAll(".vacancy-row");
+        document.querySelectorAll(
+            ".vacancy-row"
+        );
 
     const vacancies = [];
 
-    rows.forEach(function (row) {
 
-        const post =
-            row.querySelector(".v-post");
+    rows.forEach(
+        function(row) {
 
-        const total =
-            row.querySelector(".v-total");
+            const post =
+                row.querySelector(
+                    ".v-post"
+                );
 
-        const eligibility =
-            row.querySelector(".v-eligibility");
+            const total =
+                row.querySelector(
+                    ".v-total"
+                );
 
-        if (
-            !post ||
-            !total ||
-            !eligibility
-        ) return;
+            const eligibility =
+                row.querySelector(
+                    ".v-eligibility"
+                );
 
-        if (
-            post.value.trim() ||
-            total.value.trim() ||
-            eligibility.value.trim()
-        ) {
 
-            vacancies.push({
+            if (
+                !post ||
+                !total ||
+                !eligibility
+            ) {
 
-                post:
-                    post.value.trim(),
+                return;
 
-                total:
-                    total.value.trim(),
+            }
 
-                eligibility:
-                    eligibility.value.trim()
 
-            });
+            if (
+                post.value.trim() ||
+                total.value.trim() ||
+                eligibility.value.trim()
+            ) {
+
+                vacancies.push({
+
+                    post:
+                        post.value.trim(),
+
+                    total:
+                        total.value.trim(),
+
+                    eligibility:
+                        eligibility.value.trim()
+
+                });
+
+            }
 
         }
+    );
 
-    });
 
     return vacancies;
+
 }
 
 
@@ -302,40 +394,60 @@ function collectVacancies() {
 function collectFAQs() {
 
     const rows =
-        document.querySelectorAll(".faq-row");
+        document.querySelectorAll(
+            ".faq-row"
+        );
 
     const faqs = [];
 
-    rows.forEach(function (row) {
 
-        const question =
-            row.querySelector(".faq-question");
+    rows.forEach(
+        function(row) {
 
-        const answer =
-            row.querySelector(".faq-answer");
+            const question =
+                row.querySelector(
+                    ".faq-question"
+                );
 
-        if (!question || !answer) return;
+            const answer =
+                row.querySelector(
+                    ".faq-answer"
+                );
 
-        if (
-            question.value.trim() ||
-            answer.value.trim()
-        ) {
 
-            faqs.push({
+            if (
+                !question ||
+                !answer
+            ) {
 
-                question:
-                    question.value.trim(),
+                return;
 
-                answer:
-                    answer.value.trim()
+            }
 
-            });
+
+            if (
+                question.value.trim() ||
+                answer.value.trim()
+            ) {
+
+                faqs.push({
+
+                    question:
+                        question.value.trim(),
+
+                    answer:
+                        answer.value.trim()
+
+                });
+
+            }
 
         }
+    );
 
-    });
 
     return faqs;
+
 }
 
 
@@ -358,11 +470,13 @@ function generateJobId(title) {
                 ""
             );
 
+
     return (
         slug +
         "-" +
         Date.now()
     );
+
 }
 
 
@@ -374,13 +488,20 @@ if (publishBtn) {
 
     publishBtn.addEventListener(
         "click",
-        async function () {
+        async function() {
+
+
+            // ==========================================
+            // CURRENT USER
+            // ==========================================
 
             const user =
                 auth.currentUser;
 
 
+            // ==========================================
             // LOGIN CHECK
+            // ==========================================
 
             if (!user) {
 
@@ -389,10 +510,13 @@ if (publishBtn) {
                 );
 
                 return;
+
             }
 
 
+            // ==========================================
             // ADMIN CHECK
+            // ==========================================
 
             if (
                 !user.email ||
@@ -405,13 +529,18 @@ if (publishBtn) {
                 );
 
                 return;
+
             }
 
 
+            // ==========================================
             // JOB TITLE
+            // ==========================================
 
             const title =
-                getValue("jobTitle");
+                getValue(
+                    "jobTitle"
+                );
 
 
             if (!title) {
@@ -420,18 +549,31 @@ if (publishBtn) {
                     "❌ कृपया Job Title डालें."
                 );
 
+
                 const titleBox =
-                    document.getElementById("jobTitle");
+                    document.getElementById(
+                        "jobTitle"
+                    );
+
 
                 if (titleBox) {
+
                     titleBox.focus();
+
                 }
 
+
                 return;
+
             }
 
 
-            publishBtn.disabled = true;
+            // ==========================================
+            // BUTTON LOADING
+            // ==========================================
+
+            publishBtn.disabled =
+                true;
 
             publishBtn.textContent =
                 "⏳ Publishing...";
@@ -439,8 +581,15 @@ if (publishBtn) {
 
             try {
 
+
+                // ==========================================
+                // JOB ID
+                // ==========================================
+
                 const jobId =
-                    generateJobId(title);
+                    generateJobId(
+                        title
+                    );
 
 
                 // ==========================================
@@ -449,6 +598,9 @@ if (publishBtn) {
 
                 const jobData = {
 
+
+                    // BASIC
+
                     id:
                         jobId,
 
@@ -456,133 +608,245 @@ if (publishBtn) {
                         title,
 
                     department:
-                        getValue("department"),
+                        getValue(
+                            "department"
+                        ),
 
                     postName:
-                        getValue("postName"),
+                        getValue(
+                            "postName"
+                        ),
 
                     advertisementNo:
-                        getValue("advertisementNo"),
+                        getValue(
+                            "advertisementNo"
+                        ),
 
                     category:
-                        getValue("category"),
+                        getValue(
+                            "category"
+                        ),
 
                     vacancy:
-                        getValue("vacancy"),
+                        getValue(
+                            "vacancy"
+                        ),
 
                     applicationMode:
-                        getValue("applicationMode"),
+                        getValue(
+                            "applicationMode"
+                        ),
 
                     jobLocation:
-                        getValue("jobLocation"),
+                        getValue(
+                            "jobLocation"
+                        ),
 
 
-                    // LINKS
+                    // ==========================================
+                    // MAIN LINKS
+                    // ==========================================
 
                     applyLink:
-                        getValue("applyLink"),
+                        getValue(
+                            "applyLink"
+                        ),
 
                     notificationLink:
-                        getValue("notificationLink"),
+                        getValue(
+                            "notificationLink"
+                        ),
 
                     officialLink:
-                        getValue("officialLink"),
+                        getValue(
+                            "officialLink"
+                        ),
 
                     telegramLink:
-                        getValue("telegramLink"),
+                        getValue(
+                            "telegramLink"
+                        ),
 
                     whatsappLink:
-                        getValue("whatsappLink"),
+                        getValue(
+                            "whatsappLink"
+                        ),
 
 
+                    // ==========================================
                     // ORGANIZATION
+                    // ==========================================
 
                     aboutOrganization:
-                        getValue("aboutOrganization"),
+                        getValue(
+                            "aboutOrganization"
+                        ),
 
 
+                    // ==========================================
                     // DATES
+                    // ==========================================
 
                     importantDates:
                         collectDates(),
 
 
+                    // ==========================================
                     // FEE
+                    // ==========================================
 
                     applicationFee:
-                        getValue("applicationFee"),
+                        getValue(
+                            "applicationFee"
+                        ),
 
 
+                    // ==========================================
                     // AGE
+                    // ==========================================
 
                     minAge:
-                        getValue("minAge"),
+                        getValue(
+                            "minAge"
+                        ),
 
                     maxAge:
-                        getValue("maxAge"),
+                        getValue(
+                            "maxAge"
+                        ),
 
                     ageCutoffDate:
-                        getValue("ageCutoffDate"),
+                        getValue(
+                            "ageCutoffDate"
+                        ),
 
                     ageRelaxation:
-                        getValue("ageRelaxation"),
+                        getValue(
+                            "ageRelaxation"
+                        ),
 
 
+                    // ==========================================
                     // SALARY
+                    // ==========================================
 
                     salary:
-                        getValue("salary"),
+                        getValue(
+                            "salary"
+                        ),
 
                     salaryDetails:
-                        getValue("salaryDetails"),
+                        getValue(
+                            "salaryDetails"
+                        ),
 
 
+                    // ==========================================
                     // VACANCIES
+                    // ==========================================
 
                     vacancies:
                         collectVacancies(),
 
                     categoryVacancy:
-                        getValue("categoryVacancy"),
+                        getValue(
+                            "categoryVacancy"
+                        ),
 
 
+                    // ==========================================
                     // EDUCATION
+                    // ==========================================
 
                     qualification:
-                        getValue("qualification"),
+                        getValue(
+                            "qualification"
+                        ),
 
 
+                    // ==========================================
                     // DETAILS
+                    // ==========================================
 
                     jobOverview:
-                        getValue("jobOverview"),
+                        getValue(
+                            "jobOverview"
+                        ),
 
                     postingLocations:
-                        getValue("postingLocations"),
+                        getValue(
+                            "postingLocations"
+                        ),
 
                     responsibilities:
-                        getValue("responsibilities"),
+                        getValue(
+                            "responsibilities"
+                        ),
 
                     selectionProcess:
-                        getValue("selectionProcess"),
+                        getValue(
+                            "selectionProcess"
+                        ),
 
 
+                    // ==========================================
                     // EXAM
+                    // ==========================================
 
                     examPattern:
-                        getValue("examPattern"),
+                        getValue(
+                            "examPattern"
+                        ),
 
                     syllabus:
-                        getValue("syllabus"),
+                        getValue(
+                            "syllabus"
+                        ),
 
 
-                    // APPLICATION
+                    // ==========================================
+                    // HOW TO APPLY
+                    // ==========================================
 
                     howToApply:
-                        getValue("howToApply"),
+                        getValue(
+                            "howToApply"
+                        ),
 
 
-                    // INSTRUCTIONS
+                    // ==========================================
+                    // YOUTUBE VIDEO
+                    // ==========================================
+
+                    youtubeVideoLink:
+                        getValue(
+                            "youtubeVideoLink"
+                        ),
+
+
+                    // ==========================================
+                    // ADMIT CARD
+                    // ==========================================
+
+                    admitCardLink:
+                        getValue(
+                            "admitCardLink"
+                        ),
+
+
+                    // ==========================================
+                    // RESULT
+                    // ==========================================
+
+                    resultLink:
+                        getValue(
+                            "resultLink"
+                        ),
+
+
+                    // ==========================================
+                    // IMPORTANT INSTRUCTIONS
+                    // ==========================================
 
                     importantInstructions:
                         getValue(
@@ -590,19 +854,27 @@ if (publishBtn) {
                         ),
 
 
+                    // ==========================================
                     // FAQ
+                    // ==========================================
 
                     faqs:
                         collectFAQs(),
 
 
+                    // ==========================================
                     // EXTRA
+                    // ==========================================
 
                     additionalInfo:
-                        getValue("additionalInfo"),
+                        getValue(
+                            "additionalInfo"
+                        ),
 
 
+                    // ==========================================
                     // ADMIN
+                    // ==========================================
 
                     createdBy:
                         user.uid,
@@ -611,13 +883,17 @@ if (publishBtn) {
                         user.email,
 
 
+                    // ==========================================
                     // STATUS
+                    // ==========================================
 
                     status:
                         "published",
 
 
+                    // ==========================================
                     // TIMESTAMP
+                    // ==========================================
 
                     createdAt:
                         firebase.firestore
@@ -653,6 +929,7 @@ if (publishBtn) {
 
                     successMsg.style.color =
                         "green";
+
                 }
 
 
@@ -667,18 +944,28 @@ if (publishBtn) {
                 );
 
 
-                setTimeout(function () {
+                // ==========================================
+                // RESET BUTTON
+                // ==========================================
 
-                    publishBtn.textContent =
-                        "🚀 Publish Job";
+                setTimeout(
+                    function() {
 
-                    publishBtn.disabled =
-                        false;
+                        publishBtn.textContent =
+                            "🚀 Publish Job";
 
-                }, 2500);
+                        publishBtn.disabled =
+                            false;
+
+                    },
+                    2500
+                );
 
 
-            } catch (error) {
+            }
+
+            catch (error) {
+
 
                 console.error(
                     "❌ Publish Error:",
@@ -699,11 +986,13 @@ if (publishBtn) {
 
                     successMsg.style.color =
                         "red";
+
                 }
 
 
                 publishBtn.textContent =
                     "🚀 Publish Job";
+
 
                 publishBtn.disabled =
                     false;
