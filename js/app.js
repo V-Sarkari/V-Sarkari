@@ -265,3 +265,236 @@ console.log("WhatsApp Clicked");
 });
 
 }
+
+
+
+// ==========================================
+// V-Sarkari Homepage
+// Firebase Jobs Loader
+// ==========================================
+
+const jobsContainer = document.getElementById("latestJobs");
+
+
+// ==========================================
+// LOAD LATEST JOBS
+// ==========================================
+
+async function loadLatestJobs() {
+
+    if (!jobsContainer) {
+        console.error("❌ latestJobs container नहीं मिला.");
+        return;
+    }
+
+    try {
+
+        jobsContainer.innerHTML = `
+            <div class="loading-box">
+                ⏳ Latest Government Jobs Loading...
+            </div>
+        `;
+
+        const snapshot = await db
+            .collection("jobs")
+            .where("status", "==", "published")
+            .orderBy("createdAt", "desc")
+            .limit(10)
+            .get();
+
+        if (snapshot.empty) {
+
+            jobsContainer.innerHTML = `
+                <div class="empty-box">
+                    📭 अभी कोई Government Job Published नहीं है।
+                </div>
+            `;
+
+            return;
+        }
+
+
+        let html = "";
+
+
+        snapshot.forEach(function(doc) {
+
+            const job = doc.data();
+
+
+            html += `
+
+                <div class="job-card">
+
+                    <div class="job-card-header">
+
+                        <span class="job-category">
+                            ${escapeHTML(job.category || "Government Job")}
+                        </span>
+
+                        <span class="job-new">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        ${escapeHTML(job.title || "Government Job")}
+                    </h3>
+
+
+                    <p>
+                        🏢
+                        ${escapeHTML(job.department || "")}
+                    </p>
+
+
+                    <p>
+                        📊 Vacancy:
+                        ${escapeHTML(job.vacancy || "Not Mentioned")}
+                    </p>
+
+
+                    <p>
+                        📍
+                        ${escapeHTML(job.jobLocation || "All India")}
+                    </p>
+
+
+                    <div class="job-buttons">
+
+                        <a
+                            href="job-details.html?id=${encodeURIComponent(job.id)}"
+                            class="view-job-btn">
+
+                            👁️ View Details
+
+                        </a>
+
+
+                        ${
+                            job.applyLink
+                            ?
+                            `
+                            <a
+                                href="${safeURL(job.applyLink)}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="apply-job-btn">
+
+                                Apply Online
+
+                            </a>
+                            `
+                            :
+                            ""
+                        }
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        jobsContainer.innerHTML = html;
+
+
+    } catch (error) {
+
+        console.error(
+            "❌ Latest Jobs Error:",
+            error
+        );
+
+
+        jobsContainer.innerHTML = `
+            <div class="error-box">
+
+                ❌ Latest Jobs load नहीं हो सकीं।
+
+                <br><br>
+
+                कृपया थोड़ी देर बाद फिर कोशिश करें।
+
+            </div>
+        `;
+
+    }
+
+}
+
+
+// ==========================================
+// ESCAPE HTML
+// ==========================================
+
+function escapeHTML(value) {
+
+    if (value === null || value === undefined) {
+        return "";
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+// ==========================================
+// SAFE URL
+// ==========================================
+
+function safeURL(url) {
+
+    if (!url) {
+        return "#";
+    }
+
+    try {
+
+        const parsed =
+            new URL(url);
+
+        if (
+            parsed.protocol === "http:" ||
+            parsed.protocol === "https:"
+        ) {
+
+            return parsed.href;
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Invalid URL:",
+            url
+        );
+
+    }
+
+    return "#";
+
+}
+
+
+// ==========================================
+// START
+// ==========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadLatestJobs();
+
+    }
+);
